@@ -126,6 +126,7 @@ class Account extends BaseController
 
     public function logout()
     {
+        
         $sessionData = [
             'id',
             'username',
@@ -133,8 +134,8 @@ class Account extends BaseController
             'isLoggedIn',
         ];
         session()->remove($sessionData);
-
-        return redirect()->to('/');
+        header("Refresh:0; url=home.php");
+      
     }
 
     public function user()
@@ -160,9 +161,8 @@ class Account extends BaseController
 
             if ($this->request->getMethod() == 'post') {
                 $rules = [
-                        'phoneNumber' => 'required|exact_length[10]|numeric',
-                        'username' => 'required|min_length[3]|max_length[20]',
-                    ];
+                    'username' => 'required|min_length[3]|max_length[20]',
+                ];
 
                 if ($this->request->getPost('password') != '') {
                     $rules['password'] = 'required|min_length[8]|max_length[50]';
@@ -170,13 +170,6 @@ class Account extends BaseController
                 }
 
                 $errors = [
-                        'email' => [
-                            'required' => 'Vui lòng nhập Email.',
-                            'min_length' => 'Email phải có ít nhất {param} ký tự.',
-                            'max_length' => 'Email chỉ tối đa {param} ký tự.',
-                            'valid_email' => 'Email phải hợp lệ.',
-                            'is_unique' => 'Email đã có người sử dụng.',
-                        ],
                         'username' => [
                             'required' => 'Vui lòng nhập Tên đăng nhập.',
                             'min_length' => 'Tên đăng nhập phải có ít nhất {param} ký tự.',
@@ -201,13 +194,15 @@ class Account extends BaseController
                             'username' => $this->request->getVar('username'),
                         ];
                     if ($this->request->getPost('password') != '') {
-                        $newData['passwordHash'] = $this->request->getVar('password');
+                        $newData['password_hash'] = $this->request->getVar('password');
                     }
                     $model->save($newData);
                     $session = session();
+                   
                     $session->setFlashdata('success', 'Cập nhật thông tin thành công');
-
-                    return redirect()->to('/account/user');
+                    
+                    
+                    return redirect()->to('home01');
                 }
             }
             $data['user'] = $accountModel->where('id', session()->get('id'))->first();
