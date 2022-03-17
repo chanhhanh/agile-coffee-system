@@ -15,19 +15,6 @@
 
 <body>
     <div class="shadow-sm rounded">
-        <nav class="navbar navbar-light bg-light justify-content-between">
-            <div></div>
-            <ul class="navbar-nav flex-row mx-5">
-                    <li class="nav-item">
-                        <a class="nav-link px-2" href="<?php echo base_url('login'); ?>">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-2" href="<?php echo base_url('register'); ?>">Signup</a>
-                    </li>
-                <!-- <li class="nav-item">
-                    cart</li> -->
-            </ul>
-        </nav>
         <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
             <a class="navbar-brand" style="
     font-family: 'Sansita Swashed', cursive;" href="<?php echo base_url(); ?>">Harold's Coffee</a>
@@ -53,5 +40,35 @@
                     </li>
                 </ul>
             </div>
+            <?php
+      $uri = service('uri');
+     ?>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <?php if (session()->get('isLoggedIn')): ?>
+        <ul class="navbar-nav my-2 my-lg-0">
+          </li>
+          <li class="nav-item <?= ($uri->getSegment(1) == 'user' ? 'active' : null) ?>">
+          <a class="nav-link" href="<?php echo base_url('user'); ?>"><?php echo session()->get('username'); ?></a>
+          </li>
+        </ul>
+        <ul class="navbar-nav my-2 my-lg-0">
+          <li class="nav-item">
+             <a class="nav-link" href="<?php echo base_url('logout'); ?>">Logout</a>
+          </li>
+        </ul>
+      <?php else: ?>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item <?= ($uri->getSegment(1) == '' ? 'active' : null) ?>">
+                <a class="nav-link px-2" href="<?php echo base_url('login'); ?>">Login</a>
+          </li>
+          <li class="nav-item <?= ($uri->getSegment(1) == 'register' ? 'active' : null) ?>">
+                <a class="nav-link px-2" href="<?php echo base_url('register'); ?>">Signup</a>
+          </li>
+        </ul>
+        <?php endif; ?>
+      </div>
+      </div>
+    </nav>
         </nav>
     </div>
