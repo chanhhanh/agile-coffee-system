@@ -77,7 +77,29 @@
                     <div class="col-sm">
                     </div>
                 </div>
-                <!-- MAKE A FOREACH DATA FETCH HERE -->
+                <?php foreach ($top_5_popular as $coffee) : ?>
+                    <div class="row rounded py-1" id="coffee-<?php echo $coffee["id"] ?>">
+                        <div class="col-6">
+                            <a class="link-secondary text-decoration-none my-1" href="<?php echo base_url() ?>">
+                                <p class="my-1"><?php echo $coffee["coffee_name"] ?></p>
+                            </a>
+                        </div>
+                        <div class="col-sm">
+                            <p class="my-1"><?php echo $coffee["price_s"] ?></p>
+                        </div>
+                        <div class="col-sm">
+                            <p class="my-1"><?php echo $coffee["price_m"] ?></p>
+                        </div>
+                        <div class="col-sm">
+                            <p class="my-1"><?php echo $coffee["price_l"] ?></p>
+                        </div>
+                        <div class="col-sm">
+                            <a class="link-secondary text-decoration-none my-1" id="customize-<?php echo $coffee["id"] ?>" href="<?php echo base_url() ?>">
+                                <u class="my-1">Add</u>
+                            </a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
             <div class="col-lg">
                 <div class="row my-1">
@@ -96,7 +118,29 @@
                     <div class="col-sm">
                     </div>
                 </div>
-                <!-- MAKE A FOREACH DATA FETCH HERE -->
+                <?php foreach ($seasonal_coffee as $coffee) : ?>
+                    <div class="row rounded py-1" id="coffee-<?php echo $coffee["id"] ?>">
+                        <div class="col-6">
+                            <a class="link-secondary text-decoration-none my-1" href="<?php echo base_url() ?>">
+                                <p class="my-1"><?php echo $coffee["coffee_name"] ?></p>
+                            </a>
+                        </div>
+                        <div class="col-sm">
+                            <p class="my-1"><?php echo $coffee["price_s"] ?></p>
+                        </div>
+                        <div class="col-sm">
+                            <p class="my-1"><?php echo $coffee["price_m"] ?></p>
+                        </div>
+                        <div class="col-sm">
+                            <p class="my-1"><?php echo $coffee["price_l"] ?></p>
+                        </div>
+                        <div class="col-sm">
+                            <a class="link-secondary text-decoration-none my-1" id="customize-<?php echo $coffee["id"] ?>" href="<?php echo base_url() ?>">
+                                <u class="my-1">Add</u>
+                            </a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
         <div class="row">
