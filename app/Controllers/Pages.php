@@ -2,11 +2,16 @@
 
 namespace App\Controllers;
 
+use App\Models\CoffeeModel;
+
 class Pages extends BaseController
 {
     public function index()
     {
-        echo view("templates/header");
+        $model = new CoffeeModel();
+        $data["seasonal_coffee"] = $model->getSeasonalCoffee();
+        $data["top_5_popular"] = $model->getTop5Popular();
+        echo view("templates/header", $data);
         echo view("pages/home");
         echo view("templates/footer");
     }
