@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class Accountmodel extends Model
 {
     protected $table = 'account';
-    protected $allowedFields = ['email', 'username', 'password_hash', 'created_at'];
+    protected $allowedFields = ['email', 'username', 'fullname', 'gender', 'date_of_birth', 'phone_number','password_hash', 'created_at'];
     protected $beforeInsert = ['beforeInsert'];
     protected $beforeUpdate = ['beforeUpdate'];
 
