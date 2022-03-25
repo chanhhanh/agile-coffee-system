@@ -20,11 +20,14 @@
                             <input type="text" class="form-control" name="username" id="username"
                                 value="<?php echo session()->get('username'); ?>" />
                             <label for="gender">Gender:</label>
-                            <input type="text" class="form-control" name="gender" id="gender"
-                                value="<?php echo session()->get('gender'); ?>" />
+                            <select class="form-control" name="gender" id="gender">
+                                <option value="">--Please choose an option--</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
                             <label for="date_of_birth">Date of Birth:</label>
-                            <input type="text" class="form-control" name="date_of_birth" id="date_of_birth"
-                                value="<?php echo date("d/m/Y", strtotime(session()->get('date_of_birth'))); ?>" />
+                            <input type="date" class="form-control" name="date_of_birth" id="date_of_birth"
+                                value="<?php echo session()->get('date_of_birth'); ?>" />
                             <label for="phone_number">Phone:</label>
                             <input type="text" class="form-control" name="phone_number" id="phone_number"
                                 value="<?php echo session()->get('phone_number'); ?>" />
