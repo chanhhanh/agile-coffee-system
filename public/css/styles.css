@@ -19,3 +19,24 @@
   );
   z-index: 0;
 }
+
+.add {
+  display: none;
+}
+
+.coffee_hover:hover {
+  background-color: #e9ecef;
+}
+
+.coffee_hover:hover .col_sm {
+  background-color: #e9ecef;
+}
+
+.coffee_hover:hover .add {
+  display: block;
+  background-color: #e9ecef;
+}
+
+.disabled {
+  pointer-events: none;
+}
