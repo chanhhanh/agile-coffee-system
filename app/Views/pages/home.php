@@ -78,9 +78,13 @@
                     </div>
                 </div>
                 <?php foreach ($top_5_popular as $coffee) : ?>
-                    <div class="row rounded py-1" id="coffee-<?php echo $coffee["id"] ?>">
+                    <?php
+                    $hover = $coffee["sold_out"] != 0 ?  "text-black-50 disabled" :  "coffee_hover text-dark";
+                    $link =  $coffee["sold_out"] != 0 ?   base_url() : base_url("coffee/" . $coffee["id"]);
+                    ?>
+                    <div class="row rounded py-1 <?= $hover ?>">
                         <div class="col-6">
-                            <a class="link-secondary text-decoration-none my-1" href="<?php echo base_url() ?>">
+                            <a class="text-decoration-none my-1 <?= $hover ?>" href="<?= $link ?>">
                                 <p class="my-1"><?php echo $coffee["coffee_name"] ?></p>
                             </a>
                         </div>
@@ -94,7 +98,7 @@
                             <p class="my-1"><?php echo $coffee["price_l"] ?></p>
                         </div>
                         <div class="col-sm">
-                            <a class="link-secondary text-decoration-none my-1" id="customize-<?php echo $coffee["id"] ?>" href="<?php echo base_url() ?>">
+                            <a class="link-secondary text-decoration-none my-1 add">
                                 <u class="my-1">Add</u>
                             </a>
                         </div>
@@ -119,9 +123,13 @@
                     </div>
                 </div>
                 <?php foreach ($seasonal_coffee as $coffee) : ?>
-                    <div class="row rounded py-1" id="coffee-<?php echo $coffee["id"] ?>">
+                    <?php
+                    $hover = $coffee["sold_out"] != 0 ?  "text-black-50 disabled" :  "coffee_hover text-dark";
+                    $link =  $coffee["sold_out"] != 0 ?   "#" : base_url("coffee/" . $coffee["id"]);
+                    ?>
+                    <div class="row rounded py-1 <?= $hover ?>">
                         <div class="col-6">
-                            <a class="link-secondary text-decoration-none my-1" href="<?php echo base_url() ?>">
+                            <a class="text-decoration-none my-1 <?= $hover ?>" href="<?= $link ?>">
                                 <p class="my-1"><?php echo $coffee["coffee_name"] ?></p>
                             </a>
                         </div>
@@ -135,7 +143,7 @@
                             <p class="my-1"><?php echo $coffee["price_l"] ?></p>
                         </div>
                         <div class="col-sm">
-                            <a class="link-secondary text-decoration-none my-1" id="customize-<?php echo $coffee["id"] ?>" href="<?php echo base_url() ?>">
+                            <a class="link-secondary text-decoration-none my-1 add">
                                 <u class="my-1">Add</u>
                             </a>
                         </div>
@@ -160,8 +168,8 @@
                     </div>
                     <div class="col-sm">
                         <a class="link-secondary text-decoration-none my-1" href="<?php echo base_url() ?>">
-                            <u class="my-1">Explore Full Menu</u>
-                        </a>
+                            <a class="my-1 link-secondary" href="<?php echo base_url("/menu") ?>">Explore Full Menu</u>
+                            </a>
                     </div>
                 </div>
             </div>

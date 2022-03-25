@@ -17,7 +17,10 @@ class Pages extends BaseController
     }
     public function showme($page = "")
     {
-        echo view("templates/header");
+        $model = new CoffeeModel();
+        $data["coffee_type"] = $model->getCoffeeType();
+        $data["coffees"] = $model->getCoffee();
+        echo view("templates/header", $data);
         echo view("pages/$page");
         echo view("templates/footer");
     }

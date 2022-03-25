@@ -17,4 +17,12 @@ class CoffeeModel extends Model
     {
         return $this->asArray()->limit(5)->orderBy('amount_bought ASC')->find();
     }
+    public function getCoffeeType()
+    {
+        return $this->select('coffee_type, count(coffee_type)')->groupBy("coffee_type")->findAll();
+    }
+    public function getCoffee()
+    {
+        return $this->findAll();
+    }
 }
