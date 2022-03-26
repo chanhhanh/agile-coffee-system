@@ -8,7 +8,7 @@
           <?php echo session()->get('success'); ?>
         </div>
       <?php } ?>
-      <form class="" action="<?php echo base_url('/account/register'); ?>" method="post">
+      <form class="" action="<?php echo base_url('register'); ?>" method="post">
         <div class="row">
           <div class="form-group">
             <label for="fullname">Full Name : <span style="color: red; font-size: 0.7rem"> *</span></label>

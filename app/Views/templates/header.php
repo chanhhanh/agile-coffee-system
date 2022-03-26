@@ -28,7 +28,7 @@
             <a class="nav-link px-2" href="<?php echo base_url('user'); ?>"><?php echo session()->get('username'); ?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-2" href="<?php echo base_url("/account/logout")?>">Logout</a>
+            <a class="nav-link px-2" href="<?php echo base_url("logout") ?>">Logout</a>
           </li>
         <?php else : ?>
           <li class="nav-item <?= ($uri->getSegment(1) == 'login' ? 'active' : null) ?>">
