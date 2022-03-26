@@ -77,7 +77,33 @@
                     <div class="col-sm">
                     </div>
                 </div>
-                <!-- MAKE A FOREACH DATA FETCH HERE -->
+                <?php foreach ($top_5_popular as $coffee) : ?>
+                    <?php
+                    $hover = $coffee["sold_out"] != 0 ?  "text-black-50 disabled" :  "coffee_hover text-dark";
+                    $link =  $coffee["sold_out"] != 0 ?   base_url() : base_url("coffee/" . $coffee["id"]);
+                    ?>
+                    <div class="row rounded py-1 <?= $hover ?>">
+                        <div class="col-6">
+                            <a class="text-decoration-none my-1 <?= $hover ?>" href="<?= $link ?>">
+                                <p class="my-1"><?php echo $coffee["coffee_name"] ?></p>
+                            </a>
+                        </div>
+                        <div class="col-sm">
+                            <p class="my-1"><?php echo $coffee["price_s"] ?></p>
+                        </div>
+                        <div class="col-sm">
+                            <p class="my-1"><?php echo $coffee["price_m"] ?></p>
+                        </div>
+                        <div class="col-sm">
+                            <p class="my-1"><?php echo $coffee["price_l"] ?></p>
+                        </div>
+                        <div class="col-sm">
+                            <a class="link-secondary text-decoration-none my-1 add" id="customize-<?php echo $coffee["id"] ?>" href="<?= $link ?>">
+                                <u class="my-1">Add</u>
+                            </a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
             <div class="col-lg">
                 <div class="row my-1">
@@ -96,7 +122,33 @@
                     <div class="col-sm">
                     </div>
                 </div>
-                <!-- MAKE A FOREACH DATA FETCH HERE -->
+                <?php foreach ($seasonal_coffee as $coffee) : ?>
+                    <?php
+                    $hover = $coffee["sold_out"] != 0 ?  "text-black-50 disabled" :  "coffee_hover text-dark";
+                    $link =  $coffee["sold_out"] != 0 ?   "#" : base_url("coffee/" . $coffee["id"]);
+                    ?>
+                    <div class="row rounded py-1 <?= $hover ?>">
+                        <div class="col-6">
+                            <a class="text-decoration-none my-1 <?= $hover ?>" href="<?= $link ?>">
+                                <p class="my-1"><?php echo $coffee["coffee_name"] ?></p>
+                            </a>
+                        </div>
+                        <div class="col-sm">
+                            <p class="my-1"><?php echo $coffee["price_s"] ?></p>
+                        </div>
+                        <div class="col-sm">
+                            <p class="my-1"><?php echo $coffee["price_m"] ?></p>
+                        </div>
+                        <div class="col-sm">
+                            <p class="my-1"><?php echo $coffee["price_l"] ?></p>
+                        </div>
+                        <div class="col-sm">
+                            <a class="link-secondary text-decoration-none my-1 add" id="customize-<?php echo $coffee["id"] ?>" href="<?= $link ?>">
+                                <u class="my-1">Add</u>
+                            </a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
         <div class="row">
@@ -116,8 +168,8 @@
                     </div>
                     <div class="col-sm">
                         <a class="link-secondary text-decoration-none my-1" href="<?php echo base_url() ?>">
-                            <u class="my-1">Explore Full Menu</u>
-                        </a>
+                            <a class="my-1 link-secondary" href="<?php echo base_url("/menu") ?>">Explore Full Menu</u>
+                            </a>
                     </div>
                 </div>
             </div>
