@@ -117,7 +117,7 @@ class Account extends BaseController
                     'fullname' => $this->request->getVar('fullname'),
                     'gender' => 'Male',
                     'date_of_birth' => '2000/01/01',
-                    'phone_number' => '',
+                    'phone_number' => $this->request->getVar('phone_number'),
                 ];
                 $model->save($newData);
                 $session = session();

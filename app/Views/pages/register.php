@@ -15,6 +15,10 @@
                         <input type="text" class="form-control" name="fullname" id="fullname" value="">
                     </div>
                     <div class="form-group">
+                        <label for="phone_number">Phone : <span style="color: red; font-size: 0.7rem"> *</span></label>
+                        <input type="text" class="form-control" name="phone_number" id="phone_number" value="">
+                    </div>
+                    <div class="form-group">
                         <label for="email">Email : <span style="color: red; font-size: 0.7rem"> *</span></label>
                         <input type="text" class="form-control" name="email" id="email" value="">
                     </div>
