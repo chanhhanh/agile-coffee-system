@@ -3,8 +3,8 @@
     <div class="col-sm-6 p-5" style="color: #636363">
       <h3>Login</h3>
       <hr>
-      
-      <form class="" action="<?php echo base_url('/account/login'); ?>" method="post">
+
+      <form class="" action="<?php echo base_url('/login'); ?>" method="post">
         <div class="row">
           <div class="form-group">
             <label for="email">Email : </label>
@@ -19,8 +19,7 @@
               <?php echo $validation->listErrors(); ?>
             </div>
           <?php } ?>
-		  </div>
-		  <button type="submit" class="btn btn-danger col-12 mt-2">Signin</button>
+        </div>
+        <button type="submit" class="btn btn-danger col-12 mt-2">Signin</button>
       </form>
-</div>
-
+    </div>

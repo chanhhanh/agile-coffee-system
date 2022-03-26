@@ -12,35 +12,6 @@
   <link href=<?php echo base_url('/css/styles.css') ?> rel="stylesheet">
 
   <title>Harold's Coffee</title>
-  <style>
-    <?php if (isset($top_5_popular) && isset($seasonal_coffee)) : ?><?php foreach ($top_5_popular as $coffee) : ?>#customize-<?php echo $coffee['id'] ?> {
-      display: none;
-    }
-
-    #coffee-<?php echo $coffee['id'] ?>:hover #customize-<?php echo $coffee['id'] ?> {
-      background-color: #e9ecef;
-      display: block;
-    }
-
-    #coffee-<?php echo $coffee['id'] ?>:hover {
-      background-color: #e9ecef;
-    }
-
-    <?php endforeach; ?><?php foreach ($seasonal_coffee as $coffee) : ?>#customize-<?php echo $coffee['id'] ?> {
-      display: none;
-    }
-
-    #coffee-<?php echo $coffee['id'] ?>:hover #customize-<?php echo $coffee['id'] ?> {
-      background-color: #e9ecef;
-      display: block;
-    }
-
-    #coffee-<?php echo $coffee['id'] ?>:hover {
-      background-color: #e9ecef;
-    }
-
-    <?php endforeach; ?><?php endif; ?>
-  </style>
 </head>
 
 <body>
@@ -77,7 +48,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav font-weight-normal">
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Menu</a>
+            <a class="nav-link text-dark" href="<?php echo base_url("/menu") ?>">Menu</a>
           </li>
           <li class="nav-item">
             <span class="nav-link px-0">|</span>
