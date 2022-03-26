@@ -109,17 +109,24 @@ class Account extends BaseController
                 $data['validation'] = $this->validator;
             } else {
                 $model = new Accountmodel();
-
+                $date_of_birth = $this->request->getVar('date_of_birth');
                 $newData = [
                     'username' => $this->request->getVar('username'),
                     'password_hash' => $this->request->getVar('password'),
                     'email' => $this->request->getVar('email'),
+                    'fullname' => $this->request->getVar('fullname'),
+                    'gender' => 'Male',
+                    'date_of_birth' => '2000/01/01',
+                    'phone_number' => $this->request->getVar('phone_number'),
                 ];
                 $model->save($newData);
                 $session = session();
                 $session->setFlashdata('success', 'Đăng ký thành công!');
+                $user = $model->where('email', $this->request->getVar('email'))->first();
 
-                return redirect()->to('/register'); //<?php echo base_url('/account/login');
+                $this->setUserSession($user);
+
+                return redirect()->to('/');
             }
         }
 
@@ -203,8 +210,8 @@ class Account extends BaseController
                             'id' => session()->get('id'),
                             'username' => $this->request->getVar('username'),
                             'fullname' => $this->request->getVar('fullname'),
-                            'gender' => $this->request->getVar('gender'),
-                            'date_of_birth' => date("Y/m/d", strtotime($date_of_birth)),
+                            'gender' => $this->request->getVar('gender') ?: session()->get('gender'),
+                            'date_of_birth' => date("Y-m-d", strtotime($date_of_birth)),
                             'phone_number' => $this->request->getVar('phone_number'),
                         ];
                     if ($this->request->getPost('password') != '') {
