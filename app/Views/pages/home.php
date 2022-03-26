@@ -98,7 +98,7 @@
                             <p class="my-1"><?php echo $coffee["price_l"] ?></p>
                         </div>
                         <div class="col-sm">
-                            <a class="link-secondary text-decoration-none my-1 add">
+                            <a class="link-secondary text-decoration-none my-1 add" id="customize-<?php echo $coffee["id"] ?>" href="<?= $link ?>">
                                 <u class="my-1">Add</u>
                             </a>
                         </div>
@@ -143,7 +143,7 @@
                             <p class="my-1"><?php echo $coffee["price_l"] ?></p>
                         </div>
                         <div class="col-sm">
-                            <a class="link-secondary text-decoration-none my-1 add">
+                            <a class="link-secondary text-decoration-none my-1 add" id="customize-<?php echo $coffee["id"] ?>" href="<?= $link ?>">
                                 <u class="my-1">Add</u>
                             </a>
                         </div>
