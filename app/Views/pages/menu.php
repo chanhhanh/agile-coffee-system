@@ -1,9 +1,6 @@
 <div class="menu">
     <div class="container">
         <div class="row">
-
-
-
             <?php foreach ($coffee_type as $coffeeType) : ?>
                 <div class="col-6 mt-5">
                     <div class="row rounded py-1">
@@ -64,35 +61,4 @@
     </div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content bg-light">
-            <div class="modal-header d-block">
-                <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
-                <h5 class="modal-title fw-light">Customize</h5>
-                <h5 class="modal-title fw-light" id="exampleModalLabel"></h5>
-            </div>
-            <div class="modal-body">
-                <div class="container my-5 mx-2">
-                    <p>Size</p>
-                    <p>Sweetness</p>
-                    <p>Milk</p>
-                    <p>Count</p>
-                </div>
-            </div>
-            <div class="modal-footer justify-content-center">
-                <a class="link-light text-decoration-none " id="modalSubmit">
-                    <button type="button" class="btn btn-secondary shadow-none fw-light">
-                        Add To Shopping Cart
-                    </button></a>
-            </div>
-        </div>
-    </div>
-</div>
-<script>
-    function getCoffee(id, name) {
-
-        $("#exampleModalLabel").html(name);
-        $("#modalSubmit").attr('href', "<?= base_url("/coffee") ?>/" + id);
-    }
-</script>
+<?php include "modal.php" ?>
