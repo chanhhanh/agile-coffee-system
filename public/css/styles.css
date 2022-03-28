@@ -40,3 +40,18 @@
 .disabled {
   pointer-events: none;
 }
+.dropdown-menu{
+  z-index: 99;
+}
+.swapCart{
+  position: absolute;
+
+}
+.swap3{
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
+}
+.frontof{
+  z-index: -1;
+}
