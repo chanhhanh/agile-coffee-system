@@ -44,14 +44,21 @@
   z-index: 99;
 }
 .swapCart{
-  position: absolute;
-
+  position: relative;
 }
 .swap3{
     display: flex;
-    justify-content: space-around;
-    width: 25%;
+    gap: 20px;
 }
 .frontof{
   z-index: -1;
+}
+.navbar-nav .dropdown-menu{
+  position: absolute!important;
+  right: 0;
+  width: 300px;
+  top: calc(100% + 5px);
+}
+.dropdown-toggle::after{
+  all:unset;
 }
