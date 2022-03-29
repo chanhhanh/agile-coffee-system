@@ -23,14 +23,7 @@
         $uri = service('uri');
         ?>
         <?php if (session()->get('isLoggedIn')) : ?>
-        <li class=" nav-item <?= ($uri->getSegment(1) == 'user' ? 'active' : null) ?>">
-          <a class="nav-link px-2" href="<?php echo base_url('user'); ?>"><?php echo session()->get('username'); ?></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link px-2" href="<?php echo base_url("logout") ?>">Logout</a>
-        </li>
-        <?php else : ?>
-        <li class="nav-item px-2 swapCart">
+          <li class="nav-item px-2 swapCart">
         <div class="">
             <button type=" button" class="btn btn-light dropdown-toggle" onclick="toggle()">
               <i class="bi bi-cart"></i> <span class="badge badge-pill badge-danger" style="color: black">(0)</span>
@@ -54,11 +47,11 @@
               </div>
             </div>
         </li>
-        <li class="nav-item <?= ($uri->getSegment(1) == 'login' ? 'active' : null) ?>">
-          <a class="nav-link px-2" href="<?php echo base_url('login'); ?>">Login</a>
+        <li class=" nav-item <?= ($uri->getSegment(1) == 'user' ? 'active' : null) ?>">
+          <a class="nav-link px-2" href="<?php echo base_url('user'); ?>"><?php echo session()->get('username'); ?></a>
         </li>
-        <li class="nav-item <?= ($uri->getSegment(1) == 'register' ? 'active' : null) ?>">
-          <a class="nav-link px-2" href="<?php echo base_url('register'); ?>">Signup</a>
+        <li class="nav-item">
+          <a class="nav-link px-2" href="<?php echo base_url("logout") ?>">Logout</a>
         </li>
         <script>
             let isOpen = false;
@@ -81,6 +74,13 @@
               })
             }
         </script>
+        <?php else : ?>
+        <li class="nav-item <?= ($uri->getSegment(1) == 'login' ? 'active' : null) ?>">
+          <a class="nav-link px-2" href="<?php echo base_url('login'); ?>">Login</a>
+        </li>
+        <li class="nav-item <?= ($uri->getSegment(1) == 'register' ? 'active' : null) ?>">
+          <a class="nav-link px-2" href="<?php echo base_url('register'); ?>">Signup</a>
+        </li>
         <?php endif; ?>
         <!-- <li class="nav-item">
                     cart</li> -->
