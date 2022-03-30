@@ -72,10 +72,16 @@
                 <td>1</td>
                 <td>5.50</td>
             </tr>
+            <tr class="form-content-history" >
+                <td>Iced White Mocha</td>
+                <td>M</td>
+                <td>1</td>
+                <td>5.50</td>
+            </tr>
         </div>
         </table>
-        <hr style="width: 60%; margin: 0 auto"></hr>
-        <div style="text-align: right; margin-right: 27%; margin-top: 15px">
+        <hr style="width: 60%; margin: 0 auto; border-top: 0.5px dotted"></hr>
+        <div style="text-align: right; margin-right: 20%; margin-top: 15px">
             <div class="">Totals: <span>4.5</span> </div>
             <button class="repurchase-history right-history">Repurchase</button>
         </div>
