@@ -84,18 +84,29 @@
 
 
 
-.table-history{width: 100%;}
+.table-history{
+  width: 60%;
+  margin: 0 auto;
+}
 
 .col-history {padding-bottom: 5px !important;}
 
-.total-history {
+
+
+.repurchase-history {
   background-color: #276678;
   color: #fff;
-  right: 0px;
-  padding: 8px;
-  width: 17%;
+  width: 100px;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 12px;
+}
+
+.form-content-history {
+  margin: 10px;
+}
+
+.between {
   text-align: center;
-  border-radius: 8px;
-  margin-left: 60%;
-  margin-top: 20px;
+  margin-top: 15px;
 }
