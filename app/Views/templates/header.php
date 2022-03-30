@@ -106,6 +106,12 @@
           <li class="nav-item">
             <a class="nav-link text-dark" href="#">Help</a>
           </li>
+          <li class="nav-item">
+            <span class="nav-link px-0">|</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="<?php echo base_url("/history") ?>">History</a>
+          </li>
         </ul>
       </div>
   </div>
