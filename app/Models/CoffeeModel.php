@@ -25,4 +25,11 @@ class CoffeeModel extends Model
     {
         return $this->findAll();
     }
+
+    public function getSingleCoffee($id = NULL)
+    {
+        return $this->asArray()
+            ->where(['id' => $id])
+            ->findAll();
+    }
 }
