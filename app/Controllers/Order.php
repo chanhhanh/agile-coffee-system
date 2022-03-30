@@ -46,9 +46,14 @@ class Order extends BaseController
                 $data['validation'] = $this->validator;
             } else {
                 $model = new CartModel();
-                $preferences = ($this->request->getVar('sweetness') == 0 && $this->request->getVar('milk') == 0)
-                    ? "NULL" :
-                    $this->request->getVar('sweetness') . " " . $this->request->getVar('milk');
+                $sweetness = ($this->request->getVar('sweetness') == 0)
+                    ? "" :
+                    $this->request->getVar('sweetness') . " ";
+                $milk = ($this->request->getVar('milk') == 0)
+                    ? "" :
+                    $this->request->getVar('milk');
+                $preferences = $sweetness . $milk;
+                $preferences = trim($preferences);
                 $newData = [
                     'user_id' => $user_id,
                     'product_id' => $this->request->getVar('product_id'),
