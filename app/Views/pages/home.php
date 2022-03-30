@@ -98,7 +98,7 @@
                             <p class="my-1"><?php echo $coffee["price_l"] ?></p>
                         </div>
                         <div class="col-sm">
-                            <a class="link-secondary text-decoration-none my-1 add" id="customize-<?php echo $coffee["id"] ?>" href="<?= $link ?>">
+                            <a class="link-secondary text-decoration-none my-1 add" onclick="getCoffee(<?= $coffee['id'] ?>,'<?= $coffee['coffee_name'] ?>')" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 <u class="my-1">Add</u>
                             </a>
                         </div>
@@ -143,7 +143,7 @@
                             <p class="my-1"><?php echo $coffee["price_l"] ?></p>
                         </div>
                         <div class="col-sm">
-                            <a class="link-secondary text-decoration-none my-1 add" id="customize-<?php echo $coffee["id"] ?>" href="<?= $link ?>">
+                            <a class="link-secondary text-decoration-none my-1 add" onclick="getCoffee(<?= $coffee['id'] ?>,'<?= $coffee['coffee_name'] ?>')" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 <u class="my-1">Add</u>
                             </a>
                         </div>
@@ -174,3 +174,6 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal -->
+        <?php include "modal.php" ?>
