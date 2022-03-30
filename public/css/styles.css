@@ -62,3 +62,22 @@
 .dropdown-toggle::after{
   all:unset;
 }
+.product-quantity input{
+  width: 40px;
+}
+.product-quantity {
+  float: left; 
+  width: 10%;
+}
+.product-quantity:before {
+  content: 'x';
+}
+.remove-product {
+  border: 0;
+  padding: 4px 8px;
+  background-color: #c66;
+  color: #fff;
+  font-family: font-bold;
+  font-size: 12px;
+  border-radius: 3px;
+}
