@@ -16,8 +16,8 @@
                     </div>
                     <div class="form-group">
                         <label for="email">
-                            <a class="nav-link px-2" href="<?php echo base_url('/update'); ?>">Edit</a>
-                            <a class="nav-link px-2" href="<?php echo base_url("/account/logout")?>">Logout</a>
+                            <a class="nav-link px-2" href="<?php echo base_url('/update') ?>">Edit</a>
+                            <a class="nav-link px-2" href="<?php echo base_url("/logout") ?>">Logout</a>
 
                         </label>
                     </div>
