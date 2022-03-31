@@ -1,9 +1,6 @@
 <div class="menu">
     <div class="container">
         <div class="row">
-
-
-
             <?php foreach ($coffee_type as $coffeeType) : ?>
                 <div class="col-6 mt-5">
                     <div class="row rounded py-1">
@@ -29,7 +26,7 @@
                         <?php if ($coffee["coffee_type"] == $coffeeType["coffee_type"]) : ?>
                             <?php
                             $hover = $coffee["sold_out"] != 0 ?  "text-black-50 disabled" :  "coffee_hover text-dark";
-                            $link =  $coffee["sold_out"] != 0 ?   "#" : base_url("coffee/" . $coffee["id"]);
+                            $link =  $coffee["sold_out"] != 0 ?   "#" : "?coffee=" . $coffee["id"];
                             ?>
                             <div class="row rounded py-1 <?= $hover ?>">
                                 <div class=" col-6">
@@ -47,12 +44,14 @@
                                     <p class="my-1"><?php echo $coffee["price_l"] ?></p>
                                 </div>
                                 <div class="col-sm">
-                                    <a class="link-secondary text-decoration-none my-1 add" id="customize-<?php echo $coffee["id"] ?>" href="<?= $link ?>">
+                                    <a class="link-secondary text-decoration-none my-1 add" onclick="getCoffee(<?= $coffee['id'] ?>,'<?= $coffee['coffee_name'] ?>')" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                         <u class="my-1">Add</u>
                                     </a>
                                 </div>
                             </div>
+
                         <?php endif; ?>
+
                     <?php endforeach; ?>
                 </div>
 
@@ -61,3 +60,5 @@
         </div>
     </div>
 </div>
+<!-- Modal -->
+<?php include "modal.php" ?>
