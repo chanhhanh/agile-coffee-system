@@ -2,15 +2,21 @@
 
 <div class="main">
     <!-- carousel -->
+    <div class="cart-ss1-right">
+    <div class="change-quantity decrease">-</div>
+    <div class="amount">1</div>
+    <div class="change-quantity increase">+</div>
+    </div>
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" style=" transition: transform 1s ease-out, opacity .5s ease-out;">
-                <img src="<?php echo base_url("/img/harold.jpg") ?>" class="img-fluid" alt="...">
+                <img src="<?php echo base_url("/img/Slice 4.jpg") ?>" class="img-fluid" alt="...">
                 <div class="carousel-caption d-none d-md-block" style="
     z-index: 1;">
                     <h5><?php echo $quotes[$numbers[0]][0] ?></h5>
@@ -18,7 +24,7 @@
                 </div>
             </div>
             <div class="carousel-item" style=" transition: transform 1s ease-out, opacity .5s ease-out;">
-                <img src="<?php echo base_url("/img/harold.jpg") ?>" class="d-block w-100" alt="...">
+                <img src="<?php echo base_url("/img/Slice 5.jpg") ?>" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block" style="
     z-index: 1; transition: transform 1s ease-out, opacity .5s ease-out;">
                     <h5><?php echo $quotes[$numbers[1]][0] ?></h5>
@@ -26,7 +32,15 @@
                 </div>
             </div>
             <div class="carousel-item" style=" transition: transform 1s ease-out, opacity .5s ease-out;">
-                <img src="<?php echo base_url("/img/harold.jpg") ?>" class="d-block w-100" alt="...">
+                <img src="<?php echo base_url("/img/Slice 6.jpg") ?>" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block" style="
+    z-index: 1; transition: transform 1s ease-out, opacity .5s ease-out;">
+                    <h5><?php echo $quotes[$numbers[2]][0] ?></h5>
+                    <p><?php echo $quotes[$numbers[2]][1] ?></p>
+                </div>
+            </div>
+            <div class="carousel-item" style=" transition: transform 1s ease-out, opacity .5s ease-out;">
+                <img src="<?php echo base_url("/img/Slice 7.jpg") ?>" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block" style="
     z-index: 1; transition: transform 1s ease-out, opacity .5s ease-out;">
                     <h5><?php echo $quotes[$numbers[2]][0] ?></h5>
@@ -98,7 +112,7 @@
                             <p class="my-1"><?php echo $coffee["price_l"] ?></p>
                         </div>
                         <div class="col-sm">
-                            <a class="link-secondary text-decoration-none my-1 add" id="customize-<?php echo $coffee["id"] ?>" href="<?= $link ?>">
+                            <a class="link-secondary text-decoration-none my-1 add" onclick="getCoffee(<?= $coffee['id'] ?>,'<?= $coffee['coffee_name'] ?>')" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 <u class="my-1">Add</u>
                             </a>
                         </div>
@@ -143,7 +157,7 @@
                             <p class="my-1"><?php echo $coffee["price_l"] ?></p>
                         </div>
                         <div class="col-sm">
-                            <a class="link-secondary text-decoration-none my-1 add" id="customize-<?php echo $coffee["id"] ?>" href="<?= $link ?>">
+                            <a class="link-secondary text-decoration-none my-1 add" onclick="getCoffee(<?= $coffee['id'] ?>,'<?= $coffee['coffee_name'] ?>')" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 <u class="my-1">Add</u>
                             </a>
                         </div>
@@ -174,3 +188,6 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal -->
+        <?php include "modal.php" ?>
