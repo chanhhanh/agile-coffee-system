@@ -100,15 +100,6 @@
                                     aria-describedby="nameHelp" placeholder="Full your name">
                             </div>
                             <div class="col-md-12">
-                                <label for="inputGender">Gender</label>
-                                <select id="inputGender" class="form-control">
-                                    <option selected> Choose...</option>
-                                    <option> Male</option>
-                                    <option> Female</option>
-                                    <option> Other</option>
-                                </select>
-                            </div>
-                            <div class="col-md-12">
                                 <label for="exampleInputAddress">Address</label>
                                 <input type="text" class="form-control" id="exampleInputAddress"
                                     aria-describedby="addressHelp" placeholder="Your address">
