@@ -16,4 +16,10 @@ class CartModel extends Model
             ->where(['user_id' => $uid])
             ->findAll();
     }
+    public function findDupes($pid = NULL, $preferences = NULL)
+    {
+        return $this->asArray()
+            ->where(['product_id' => $pid, 'preferences' => $preferences])
+            ->find();
+    }
 }
