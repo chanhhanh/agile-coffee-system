@@ -57,7 +57,7 @@ class Order extends BaseController
             } else {
                 //remove dupes
                 $cart = new CartModel();
-                $cart_data = $cart->findDupes($this->request->getVar('product_id'), $preferences);
+                $cart_data = $cart->findDupes($this->request->getVar('product_id'), $this->request->getVar('size'), $preferences);
                 // print_r($cart_data);
                 if (isset($cart_data[0]['id'])) {
                     $model = new CartModel();
