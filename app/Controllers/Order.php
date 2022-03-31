@@ -39,6 +39,14 @@ class Order extends BaseController
                 'milk' => 'in_list[0,Milk 1,Milk 2]',
                 'quantity' => 'required|greater_than[0]|less_than[21]',
             ];
+            $sweetness = ($this->request->getVar('sweetness') == 0)
+                ? "" :
+                $this->request->getVar('sweetness') . " ";
+            $milk = ($this->request->getVar('milk') == 0)
+                ? "" :
+                $this->request->getVar('milk');
+            $preferences = $sweetness . $milk;
+            $preferences = trim($preferences);
 
             $errors = [
                 "*" => 'Request Invalid.'
@@ -47,25 +55,31 @@ class Order extends BaseController
             if (!$this->validate($rules, $errors)) {
                 $data['validation'] = $this->validator;
             } else {
-                $model = new CartModel();
-                $sweetness = ($this->request->getVar('sweetness') == 0)
-                    ? "" :
-                    $this->request->getVar('sweetness') . " ";
-                $milk = ($this->request->getVar('milk') == 0)
-                    ? "" :
-                    $this->request->getVar('milk');
-                $preferences = $sweetness . $milk;
-                $preferences = trim($preferences);
-                $newData = [
-                    'user_id' => $user_id,
-                    'product_id' => $this->request->getVar('product_id'),
-                    'size' => $this->request->getVar('size'),
-                    'quantity' => $this->request->getVar('quantity'),
-                    'preferences' => $preferences,
-                    'total_amount' => $total_amount
-                ];
-                $model->save($newData);
-                session()->setFlashdata('success', 'Order Successful.');
+                //remove dupes
+                $cart = new CartModel();
+                $cart_data = $cart->findDupes($this->request->getVar('product_id'), $preferences);
+                // print_r($cart_data);
+                if (isset($cart_data[0]['id'])) {
+                    $model = new CartModel();
+                    $newData = [
+                        'quantity' => $this->request->getVar('quantity'),
+                        'total_amount' => $total_amount
+                    ];
+                    $model->update($cart_data[0]['id'], $newData);
+                    session()->setFlashdata('success', 'Order Successful.');
+                } else {
+                    $model = new CartModel();
+                    $newData = [
+                        'user_id' => $user_id,
+                        'product_id' => $this->request->getVar('product_id'),
+                        'size' => $this->request->getVar('size'),
+                        'quantity' => $this->request->getVar('quantity'),
+                        'preferences' => $preferences,
+                        'total_amount' => $total_amount
+                    ];
+                    $model->save($newData);
+                    session()->setFlashdata('success', 'Order Successful.');
+                }
             }
         }
         $model = new CoffeeModel();
