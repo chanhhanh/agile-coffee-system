@@ -12,7 +12,9 @@
             <input type="text" class="form-control w-100 my-5" placeholder="Your Address Here" aria-label="Username" aria-describedby="addon-wrapping">
             <div class="used-address">
                 Addresses you have used:
-                <div class="my-2 fw-light fs-6">Abc Sesame St.</div>
+                <?php foreach ($addresses as $address) : ?>
+                    <div class="my-2 fw-light fs-6"><?= $address['address'] ?></div>
+                <?php endforeach ?>
             </div>
             <button type="submit" id="submit" onclick="setAmount()" class="btn btn-secondary shadow-none mt-5 float-end">
                 Set Delivery Time

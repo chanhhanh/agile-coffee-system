@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Models\CartModel;
 use App\Models\CoffeeModel;
+use App\Models\AddressModel;
+
 
 class Order extends BaseController
 {
@@ -74,5 +76,17 @@ class Order extends BaseController
         echo view('templates/header', $data);
         echo view('pages/menu');
         echo view('templates/footer');
+    }
+    public function delivery()
+    {
+        $user_id = session()->has('id') ? session()->get('id') : NULL;
+        if ($user_id == NULL) return redirect()->to(base_url());
+        $model = new AddressModel();
+        $cart_model = new CartModel();
+        $data["cart_item"] = $cart_model->getUserCart($user_id);
+        $data["addresses"] = $model->getUserAddress($user_id);
+        echo view("templates/header", $data);
+        echo view("pages/delivery");
+        echo view("templates/footer");
     }
 }
