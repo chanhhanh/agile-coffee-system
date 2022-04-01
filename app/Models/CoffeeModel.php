@@ -30,6 +30,6 @@ class CoffeeModel extends Model
     {
         return $this->asArray()
             ->where(['id' => $id])
-            ->findAll();
+            ->find();
     }
 }

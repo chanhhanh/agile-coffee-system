@@ -37,6 +37,7 @@ $routes->match(['get', 'post'], '/register', 'Account::register');
 $routes->match(['get', 'post'], '/logout', 'Account::logout');
 $routes->match(['get', 'post'], '/update', 'Account::update');
 $routes->post('/add', 'Order::AddToCart');
+$routes->match(['get', 'post'], '/delivery', 'Order::delivery');
 $routes->match(['get', 'post'], '(:any)', 'Pages::showme/$1');
 
 
