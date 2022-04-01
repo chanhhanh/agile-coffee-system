@@ -29,25 +29,25 @@
               </button>
               <div class="dropdown-menu p-4" id="popup">
                 <div class="row cart-detail">
-                    <table class="table table-borderless">
+                  <table class="table table-borderless">
                     <tbody>
-                      <?php $sum=0 ?>
-                    <?php foreach ($cart_item as $item) : ?>
-                      <tr>
-                        <td><?php echo $item["coffee_name"] ?></td>
-                        <td><?php echo $item["size"] ?></td>
-                        <td><?php echo $item["quantity"] ?></td>
-                      </tr>
-                      <tr>
-                        <?php if($item["preferences"] != null){ ?>
-                          <td> Customized: <?php echo $item["preferences"] ?></td>
-                        <?php } ?>
-                      </tr>
-                      <?php $sum+=$item["total_amount"] ?>
-                    <?php endforeach; ?>
+                      <?php $sum = 0 ?>
+                      <?php foreach ($cart_item as $item) : ?>
+                        <tr>
+                          <td><?php echo $item["coffee_name"] ?></td>
+                          <td><?php echo $item["size"] ?></td>
+                          <td><?php echo $item["quantity"] ?></td>
+                        </tr>
+                        <tr>
+                          <?php if ($item["preferences"] != null) { ?>
+                            <td> Customized: <?php echo $item["preferences"] ?></td>
+                          <?php } ?>
+                        </tr>
+                        <?php $sum += $item["total_amount"] ?>
+                      <?php endforeach; ?>
                     </tbody>
                   </table>
-                  
+
                   <!-- <table class="table table-borderless">
                     <tbody>
                       <tr>
@@ -65,7 +65,7 @@
                 <div class="row total-header-section">
                   <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
                     <hr>
-                    <p>Total: <span class="text-info">$<?=$sum?></span></p>
+                    <p>Total: <span class="text-info">$<?= $sum ?></span></p>
                   </div>
                 </div>
                 <div class="row mt-4">
