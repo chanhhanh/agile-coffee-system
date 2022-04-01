@@ -13,6 +13,9 @@
 
   <div class="tab-pane fade between" id="nav-delivered" role="tabpanel" aria-labelledby="nav-delivered-tab">
         <div class="card-history" >
+          <div style=" color: #756e6e; display: flex; margin-right: 5px; margin-bottom: 10px"> Delivered on 
+            <div style="margin-left: 5px;">27/03/2022</div>
+        </div>
           <div class="flex-row-history space-history">
             <div class="flex-row-history ">
               <div>
@@ -30,6 +33,10 @@
                 <div class="flex-row-history">
                   <div class="bold-history margin-2">Size: </div>
                   <div>L, M, S</div>
+                </div>
+                <div class="flex-row-history">
+                  <div class="bold-history margin-2">Totals: </div>
+                  <div>4.5</div>
                 </div>
               </div>
             </div>
