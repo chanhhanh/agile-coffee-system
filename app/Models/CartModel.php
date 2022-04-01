@@ -11,6 +11,8 @@ class CartModel extends Model
     public function getUserCart($uid = null)
     {
         return $this->asArray()
+            ->select('coffee_name, size, quantity, preferences, total_amount')
+            ->join('coffee_list', 'coffee_list.id = product_id')
             ->where(['user_id' => $uid])
             ->findAll();
     }
