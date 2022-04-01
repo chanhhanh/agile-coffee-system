@@ -64,7 +64,7 @@
                             <h5 class=" fw-light">Good morning, <?php echo session()->get('username') ?></h5>
                         </div>
                         <a class="btn btn-secondary m-2 w-75 shadow-none fw-light" href="#" role="button">Pick Up</a>
-                        <a class="btn btn-secondary m-2 w-75 shadow-none fw-light" href="#" role="button">Delivery</a>
+                        <a class="btn btn-secondary m-2 w-75 shadow-none fw-light" href="<?= base_url("delivery") ?>" role="button">Delivery</a>
                     </div>
                 </div>
             <?php endif; ?>
