@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Accountmodel;
+use App\Models\CartModel;
 
 class Account extends BaseController
 {
@@ -172,7 +173,9 @@ class Account extends BaseController
         if (!session()->has('isLoggedIn')) {
             return redirect()->to('/account/login');
         } else {
+            $user_id = session()->has('id') ? session()->get('id') : NULL;
             $accountModel = new Accountmodel();
+            $cart_model = new CartModel();
             helper(['form']);
 
             if ($this->request->getMethod() == 'post') {
@@ -227,6 +230,7 @@ class Account extends BaseController
                 }
             }
             $data['user'] = $accountModel->where('id', session()->get('id'))->first();
+            $data["cart_item"] = $cart_model->getUserCart($user_id);
             echo view('templates/header', $data);
             echo view('pages/update');
             echo view('templates/footer');
