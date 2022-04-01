@@ -143,8 +143,25 @@
 .margin-1 {margin-left: 20px;}
 .btn-view-order-detail {
   margin-bottom: 8px;
+  border: 1px solid #15a567;
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  color: #15a567;
+}
+.btn-order-again {
+  border: 1px solid #15a567;
+  background: #15a567;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
 }
 
 .nav-link {
   color: #15a567;
 }
+.nav-link:hover {color: #117248;} 
+.bold-history{
+  font-weight: bold;
+}
+.margin-2 {margin-right: 7px;}

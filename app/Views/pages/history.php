@@ -56,7 +56,7 @@
 </nav>
 <div class="tab-content" id="nav-tabContent">
   <div class="tab-pane fade show active between" id="nav-confirmed" role="tabpanel" aria-labelledby="nav-confirmed-tab">Đã xác nhận</div>
-  
+
   <div class="tab-pane fade between" id="nav-delivering" role="tabpanel" aria-labelledby="nav-delivering-tab">Đang giao</div>
 
   <div class="tab-pane fade between" id="nav-delivered" role="tabpanel" aria-labelledby="nav-delivered-tab">
@@ -109,22 +109,22 @@
               </div>
               <div class="flex-col-history margin-1">
                 <div class="flex-row-history space-history">
-                  <div>ID order: </div>
+                  <div class="bold-history margin-2">ID order: </div>
                   <div>52487VVHFI45</div>
                 </div>
                 <div class="flex-row-history">
-                  <div>Quantity: </div>
+                  <div class="bold-history margin-2">Quantity: </div>
                   <div>2</div>
                 </div>
                 <div class="flex-row-history">
-                  <div>Size: </div>
+                  <div class="bold-history margin-2">Size: </div>
                   <div>L, M, S</div>
                 </div>
               </div>
             </div>
             <div class="flex-col-history">
               <button class="btn-view-order-detail">View order details</button>
-              <button>Order again</button>
+              <button class="btn-order-again">Order again</button>
             </div>
           </div>
       </div>
