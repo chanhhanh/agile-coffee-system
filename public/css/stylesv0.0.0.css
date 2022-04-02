@@ -144,41 +144,51 @@
 .margin-1 {margin-left: 20px;}
 .btn-view-order-detail {
   margin-bottom: 8px;
-  border: 1px solid #15a567;
+  border: 1px solid #BB2D3B;
   background: #fff;
   padding: 5px;
   border-radius: 5px;
-  color: #15a567;
+  color: #BB2D3B;
   text-decoration: none;
 }
 .btn-order-again {
-  border: 1px solid #15a567;
-  background: #15a567;
+  border: 1px solid #BB2D3B;
+  background: #BB2D3B;
   padding: 5px;
   border-radius: 5px;
   color: #fff;
   text-decoration: none;
 }
 .btn-view-order-detail:hover{
-  color:#117248;
-  border: 1px solid 117248;
+  color:#d3434f;
+  border: 1px solid #d3434f;
 }
 
 .btn-order-again:hover{
-  background:#117248;
+  background:#d3434f;
   border: 1px solid 117248;
-  color: #ccc;
+  color: #fff;
 }
 
 .nav-link {
-  color: #15a567;
+  color: #BB2D3B;
 }
-.nav-link:hover {color: #117248;} 
+.nav-link:hover {color: #d3434f;} 
 .bold-history{
   font-weight: bold;
 }
 .margin-2 {margin-right: 7px;}
 .totals-in-history{
+  margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 5px;
+  font-weight: 500;
+}
+
+.date-order{
+  color: #756e6e; 
+  display: flex; margin-right: 5px; 
+  margin-bottom: 10px;
+  justify-content: flex-end;
+
 }

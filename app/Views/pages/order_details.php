@@ -41,7 +41,7 @@
         </div>
          <hr style="width: 60%; margin: 0 auto; border-top: 0.5px dotted"></hr>
          <div class="flex-row-history" style="width: 60%; justify-content: space-between;margin: 0 auto;">
-             <div style="color: #15a567;">Delivered</div>
+             <div style="color: #d3434f;">Delivered</div>
             <div >
                 <div class="totals-in-history space-history">Totals: <span>4.5</span> </div>
                 <a class="btn-order-again" href="<?php echo base_url("") ?>">Order again</a>
