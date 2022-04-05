@@ -17,14 +17,30 @@ class History extends BaseController
 
         $data_history = [
             'list_orders' => $order_delivery_model->getAllOrder($user_id),
+            'unconfirm' => 0,
+            'confirm' => 0,
+            'delivering' => 0,
+            'delivered' => 0,
+            'cancelled' => 0,
         ];
 
         $data = [
             'cart_item' => $cart_model->getUserCart($user_id),
         ];
 
-        // foreach ($data_history['list_orders']->getResult() as $row)
-        //     print_r($row);
+        // get num of type
+        foreach ($data_history['list_orders']->getResult() as $row)
+            if ($row->order_id == 0)
+                $data_history['unconfirm']++;
+            elseif ($row->order_id == 1)
+                $data_history['confirm']++;
+            elseif ($row->order_id == 2)
+                $data_history['delivering']++;
+            elseif ($row->order_id == 3)
+                $data_history['delivered']++;
+            elseif ($row->order_id == 4)
+                $data_history['cancelled']++;
+
         echo view("templates/header", $data);
         echo view("pages/history", $data_history);
         echo view("templates/footer");
