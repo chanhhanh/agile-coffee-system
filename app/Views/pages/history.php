@@ -72,7 +72,7 @@
         </form>
       <?php endif ?>
     <?php endforeach ?>
-    <?php if (count($list_orders->getResult()) == 0) : ?>
+    <?php if ($unconfirm == 0) : ?>
       <div style="height: 400px;" class="d-flex align-items-center justify-content-center">No orders yet! Order now!!!</div>
     <?php endif ?>
   </div>
@@ -117,7 +117,7 @@
         </div>
       <?php endif ?>
     <?php endforeach ?>
-    <?php if (count($list_orders->getResult()) == 0) : ?>
+    <?php if ($confirm == 0) : ?>
       <div style="height: 400px;" class="d-flex align-items-center justify-content-center">No orders yet! Order now!!!</div>
     <?php endif ?>
   </div>
@@ -161,7 +161,7 @@
         </div>
       <?php endif ?>
     <?php endforeach ?>
-    <?php if (count($list_orders->getResult()) == 0) : ?>
+    <?php if ($delivering == 0) : ?>
       <div style="height: 400px;" class="d-flex align-items-center justify-content-center">No orders yet! Order now!!!</div>
     <?php endif ?>
   </div>
@@ -205,7 +205,7 @@
         </div>
       <?php endif ?>
     <?php endforeach ?>
-    <?php if (count($list_orders->getResult()) == 0) : ?>
+    <?php if ($delivered == 0) : ?>
       <div style="height: 400px;" class="d-flex align-items-center justify-content-center">No orders yet! Order now!!!</div>
     <?php endif ?>
   </div>
@@ -249,7 +249,7 @@
         </div>
       <?php endif ?>
     <?php endforeach ?>
-    <?php if (count($list_orders->getResult()) == 0) : ?>
+    <?php if ($cancelled == 0) : ?>
       <div style="height: 400px;" class="d-flex align-items-center justify-content-center">No canceled orders yet!</div>
     <?php endif ?>
   </div>
