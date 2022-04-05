@@ -11,63 +11,65 @@
   <div class="tab-pane fade show active between" id="nav-unconfirmed" role="tabpanel" aria-labelledby="nav-unconfirmed-tab">
     <?php foreach ($list_orders->getResult() as $order) : ?>
       <?php if ($order->status == 0) : ?>
-        <div class="card-history mb-4">
-          <div class="date-order"> Order at
-            <div style="margin-left: 5px;"><?= esc($order->ordered_at) ?></div>
-          </div>
-          <div class="flex-row-history space-history">
-            <div class="flex-row-history ">
-              <div>
-                <img src="<?php echo base_url("/img/coffee.jpg") ?>" alt="..." class="img-coffee"></img>
-              </div>
-              <div class="flex-col-history margin-1">
-                <div class="flex-row-history space-history">
-                  <div class="bold-history margin-2">ID order: </div>
-                  <div><?= esc($order->order_id) ?></div>
+        <form action="<?php echo base_url("order/cancel") ?>" method="post">
+          <input type="hidden" name="order_id" value="<?= esc($order->order_id) ?>" />
+          <div class="card-history mb-4">
+            <div class="date-order"> Order at
+              <div style="margin-left: 5px;"><?= esc($order->ordered_at) ?></div>
+            </div>
+            <div class="flex-row-history space-history">
+              <div class="flex-row-history ">
+                <div>
+                  <img src="<?php echo base_url("/img/coffee.jpg") ?>" alt="..." class="img-coffee"></img>
                 </div>
-                <div class="flex-row-history">
-                  <div class="bold-history margin-2">Total quantity: </div>
-                  <div><?= esc($order->quantity); ?></div>
-                </div>
-                <!-- <div class="flex-row-history">
+                <div class="flex-col-history margin-1">
+                  <div class="flex-row-history space-history">
+                    <div class="bold-history margin-2">ID order: </div>
+                    <div><?= esc($order->order_id) ?></div>
+                  </div>
+                  <div class="flex-row-history">
+                    <div class="bold-history margin-2">Total quantity: </div>
+                    <div><?= esc($order->quantity); ?></div>
+                  </div>
+                  <!-- <div class="flex-row-history">
                   <div class="bold-history margin-2">Size: </div>
                   <div>L, M, S</div>
-                </div> -->
-                <div class="flex-row-history">
-                  <div class="bold-history margin-2">Totals: </div>
-                  <div><?= esc($order->total_amount_order); ?></div>
+                  </div> -->
+                  <div class="flex-row-history">
+                    <div class="bold-history margin-2">Totals: </div>
+                    <div><?= esc($order->total_amount_order); ?></div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="flex-col-history">
-              <a class="btn-view-order-detail" href="<?php echo base_url("/order_details.php") ?>">View order details</a>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Cancel
-              </button>
+              <div class="flex-col-history">
+                <a class="btn-view-order-detail" href="<?php echo base_url("/order_details.php") ?>">View order details</a>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal<?= esc($order->order_id) ?>">
+                  Cancel
+                </button>
 
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Confirm</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      Are you sure you want to cancel your order?
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                      <button type="button" class="btn btn-primary">Yes</button>
+                <!-- Modal -->
+                <div class="modal fade" id="modal<?= esc($order->order_id) ?>" tabindex="-1" aria-labelledby="modalLabel<?= esc($order->order_id) ?>" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabel<?= esc($order->order_id) ?>">Confirm</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        Are you sure you want to cancel your order?
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                        <button type="submit" class="btn btn-primary">Yes</button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- <a class="btn-order-again" href="<?php echo base_url("") ?>">Cancel</a> -->
             </div>
           </div>
-        </div>
+        </form>
       <?php endif ?>
     <?php endforeach ?>
     <?php if (count($list_orders->getResult()) == 0) : ?>
