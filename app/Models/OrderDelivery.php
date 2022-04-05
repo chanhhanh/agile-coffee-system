@@ -10,6 +10,7 @@ class OrderDelivery extends Model
 {
     protected $table = "order_delivery";
     protected $createdField  = 'updated_at';
+    protected $allowedFields = ['status'];
 
     public function getAllOrder($user_id, $status = -1)
     {
