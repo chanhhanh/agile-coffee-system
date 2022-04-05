@@ -11,11 +11,21 @@ class History extends BaseController
     {
         $model = new OrderDelivery();
         $cart_model = new CartModel();
+
         $user_id = session()->has('id') ? session()->get('id') : NULL;
-        $datahistory["list_orders"] = $model->getAllOrder();
-        $data["cart_item"] = $cart_model->getUserCart($user_id);
+
+        $data_history = [
+            'list_orders' => $model->getAllOrder($user_id),
+        ];
+
+        $data = [
+            'cart_item' => $cart_model->getUserCart($user_id),
+        ];
+
+        // foreach ($data_history['list_orders']->getResult() as $row)
+        //     print_r($row);
         echo view("templates/header", $data);
-        echo view("pages/history", $datahistory);
+        echo view("pages/history", $data_history);
         echo view("templates/footer");
     }
 }
