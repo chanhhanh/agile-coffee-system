@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Accountmodel;
+use App\Models\CartModel;
 
 class Account extends BaseController
 {
@@ -57,6 +58,10 @@ class Account extends BaseController
             'id' => $user['id'],
             'username' => $user['username'],
             'email' => $user['email'],
+            'fullname' => $user['fullname'],
+            'gender' => $user['gender'],
+            'date_of_birth' => $user['date_of_birth'],
+            'phone_number' => $user['phone_number'],
             'isLoggedIn' => true,
         ];
 
@@ -105,17 +110,24 @@ class Account extends BaseController
                 $data['validation'] = $this->validator;
             } else {
                 $model = new Accountmodel();
-
+                $date_of_birth = $this->request->getVar('date_of_birth');
                 $newData = [
                     'username' => $this->request->getVar('username'),
                     'password_hash' => $this->request->getVar('password'),
                     'email' => $this->request->getVar('email'),
+                    'fullname' => $this->request->getVar('fullname'),
+                    'gender' => 'Male',
+                    'date_of_birth' => '2000/01/01',
+                    'phone_number' => $this->request->getVar('phone_number'),
                 ];
                 $model->save($newData);
                 $session = session();
                 $session->setFlashdata('success', 'Đăng ký thành công!');
+                $user = $model->where('email', $this->request->getVar('email'))->first();
 
-                return redirect()->to('/register'); //<?php echo base_url('/account/login');
+                $this->setUserSession($user);
+
+                return redirect()->to('/');
             }
         }
 
@@ -131,11 +143,15 @@ class Account extends BaseController
             'id',
             'username',
             'email',
+            'fullname',
+            'gender',
+            'date_of_birth',
+            'phone_number',
             'isLoggedIn',
         ];
         session()->remove($sessionData);
-        header("Refresh:0; url=home.php");
-      
+        // header("Refresh:0; url=home.php");
+        return redirect()->to(base_url());
     }
 
     public function user()
@@ -151,12 +167,15 @@ class Account extends BaseController
         }
     }
 
+
     public function update()
     {
         if (!session()->has('isLoggedIn')) {
             return redirect()->to('/account/login');
         } else {
+            $user_id = session()->has('id') ? session()->get('id') : NULL;
             $accountModel = new Accountmodel();
+            $cart_model = new CartModel();
             helper(['form']);
 
             if ($this->request->getMethod() == 'post') {
@@ -189,9 +208,14 @@ class Account extends BaseController
                     $data['validation'] = $this->validator;
                 } else {
                     $model = new Accountmodel();
+                    $date_of_birth = $this->request->getVar('date_of_birth');
                     $newData = [
                             'id' => session()->get('id'),
                             'username' => $this->request->getVar('username'),
+                            'fullname' => $this->request->getVar('fullname'),
+                            'gender' => $this->request->getVar('gender') ?: session()->get('gender'),
+                            'date_of_birth' => date("Y-m-d", strtotime($date_of_birth)),
+                            'phone_number' => $this->request->getVar('phone_number'),
                         ];
                     if ($this->request->getPost('password') != '') {
                         $newData['password_hash'] = $this->request->getVar('password');
@@ -200,12 +224,13 @@ class Account extends BaseController
                     $session = session();
                    
                     $session->setFlashdata('success', 'Cập nhật thông tin thành công');
-                    
-                    
-                    return redirect()->to('home01');
+                    $session->set($newData);
+                    echo "<script>alert('Cập nhật thông tin thành công');</script>";
+                    return redirect()->to('/user');
                 }
             }
             $data['user'] = $accountModel->where('id', session()->get('id'))->first();
+            $data["cart_item"] = $cart_model->getUserCart($user_id);
             echo view('templates/header', $data);
             echo view('pages/update');
             echo view('templates/footer');
