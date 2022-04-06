@@ -39,9 +39,15 @@
                           <td><?php echo $item["quantity"] ?></td>
                         </tr>
                         <tr>
-                          <?php if ($item["preferences"] != null) { ?>
-                            <td> Customized: <?php echo $item["preferences"] ?></td>
-                          <?php } ?>
+                          <?php if ($item['sweetness'] != 0 || $item['milk'] != 0) : ?>
+                            <td>Customized:
+                              <?php if ($item["sweetness"] != 0) { ?>
+                                Sweetness <?php echo $item["sweetness"] ?>
+                              <?php } ?>
+                              <?php if ($item["milk"] != 0) { ?>
+                                Milk <?php echo $item["milk"] ?>
+                              <?php } ?></td>
+                          <?php endif; ?>
                         </tr>
                         <?php $sum += $item["total_amount"] ?>
                       <?php endforeach; ?>
