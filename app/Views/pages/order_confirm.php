@@ -39,7 +39,9 @@
                                     <h6 class="my-0"><?php echo $item["coffee_name"] ?> (<?php echo $item["size"] ?>)
                                     </h6>
                                     <small class="text-muted product-line-price">Customized:
-                                        <?php echo $item["preferences"] ?></small>
+                                        <?php echo $item["size"] ?>,
+                                        <?php echo $item["sweetness"] ?>,
+                                        <?php echo $item["milk"] ?></small>
                                 </div>
 
                                 <div class="product-quantity" style="width: 52px; margin-left: 10px">
