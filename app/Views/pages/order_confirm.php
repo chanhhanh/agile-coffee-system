@@ -35,18 +35,18 @@
                             <?php $sum = 0 ?>
                             <?php foreach ($cart_item as $item) : ?>
                             <li class="product list-group-item d-flex justify-content-between lh-condensed">
-                                <div>
+                                <div style="width: 195px">
                                     <h6 class="my-0"><?php echo $item["coffee_name"] ?> (<?php echo $item["size"] ?>)
                                     </h6>
                                     <small class="text-muted product-line-price">Customized:
                                         <?php echo $item["preferences"] ?></small>
                                 </div>
 
-                                <div class="product-quantity" style="width: 52px">
+                                <div class="product-quantity" style="width: 52px; margin-left: 10px">
                                     <input type="number" value="<?php echo $item["quantity"] ?>" min="1"
                                         style="width:40px">
                                 </div>
-                                <div class="product-removal">
+                                <div class="product-removal" style="margin-right: -2px; width: 95px">
                                     <!-- <button class="remove-product"
                                             style="border: 0; padding: 4px 8px; background-color: #c66; color: #fff; font-family: font-bold; font-size: 12px; border-radius: 3px;">
                                             Remove
@@ -65,7 +65,7 @@
                                 </div>
                                 <span class="text-muted">119920000</span>
                             </li> -->
-                            <li class="list-group-item d-flex justify-content-between">
+                            <li class="list-group-item d-flex justify-content-between" style="padding-right: 25px;">
                                 <span>Total money</span>
                                 <strong>$<?= $sum ?></strong>
                             </li>
