@@ -40,9 +40,9 @@ $quantity = isset($_SESSION["quantity"]) ? $_SESSION["quantity"] : 0;
                             </div>
                             <div class="col-6">
                                 <div class="btn-group float-end">
-                                    <input type="radio" class="btn-check" name="sweetness" id="s1" value="Sweetness 1">
+                                    <input type="radio" class="btn-check" name="sweetness" id="s1" value="1">
                                     <label class="btn btn-outline-secondary shadow-none " for="s1">1</label>
-                                    <input type="radio" class="btn-check" name="sweetness" id="s2" value="Sweetness 2">
+                                    <input type="radio" class="btn-check" name="sweetness" id="s2" value="2">
                                     <label class="btn btn-outline-secondary shadow-none " for="s2">2</label>
 
                                 </div>
@@ -56,9 +56,9 @@ $quantity = isset($_SESSION["quantity"]) ? $_SESSION["quantity"] : 0;
                             </div>
                             <div class="col-6">
                                 <div class="btn-group float-end">
-                                    <input type="radio" class="btn-check" name="milk" id="m1" value="Milk 1">
+                                    <input type="radio" class="btn-check" name="milk" id="m1" value="1">
                                     <label class="btn btn-outline-secondary shadow-none " for="m1">1</label>
-                                    <input type="radio" class="btn-check" name="milk" id="m2" value="Milk 2">
+                                    <input type="radio" class="btn-check" name="milk" id="m2" value="2">
                                     <label class="btn btn-outline-secondary shadow-none " for="m2">2</label>
                                 </div>
                             </div>
