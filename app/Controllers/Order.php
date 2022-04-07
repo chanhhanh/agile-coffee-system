@@ -35,18 +35,10 @@ class Order extends BaseController
             //validation
             $rules = [
                 'size' => 'required|in_list[S,M,L]',
-                'sweetness' => 'in_list[0,Sweetness 1,Sweetness 2]',
-                'milk' => 'in_list[0,Milk 1,Milk 2]',
+                'sweetness' => 'in_list[0, 1, 2]',
+                'milk' => 'in_list[0, 1, 2]',
                 'quantity' => 'required|greater_than[0]|less_than[21]',
             ];
-            $sweetness = ($this->request->getVar('sweetness') == 0)
-                ? "" :
-                $this->request->getVar('sweetness') . " ";
-            $milk = ($this->request->getVar('milk') == 0)
-                ? "" :
-                $this->request->getVar('milk');
-            $preferences = $sweetness . $milk;
-            $preferences = trim($preferences);
 
             $errors = [
                 "*" => 'Request Invalid.'
@@ -57,7 +49,12 @@ class Order extends BaseController
             } else {
                 //remove dupes
                 $cart = new CartModel();
-                $cart_data = $cart->findDupes($this->request->getVar('product_id'), $this->request->getVar('size'), $preferences);
+                $cart_data = $cart->findDupes(
+                    $this->request->getVar('product_id'),
+                    $this->request->getVar('size'),
+                    $this->request->getVar('sweetness'),
+                    $this->request->getVar('milk'),
+                );
                 // print_r($cart_data);
                 if (isset($cart_data[0]['id'])) {
                     $model = new CartModel();
@@ -74,7 +71,8 @@ class Order extends BaseController
                         'product_id' => $this->request->getVar('product_id'),
                         'size' => $this->request->getVar('size'),
                         'quantity' => $this->request->getVar('quantity'),
-                        'preferences' => $preferences,
+                        'sweetness' => $this->request->getVar('sweetness'),
+                        'milk' => $this->request->getVar('milk'),
                         'total_amount' => $total_amount
                     ];
                     $model->save($newData);
