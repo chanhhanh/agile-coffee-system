@@ -52,7 +52,7 @@
                                             Remove
                                         </button> -->
                                     <i class="bi bi-trash3 remove-product"
-                                        style="border: 0; padding: 4px 8px; background-color: #c6699; color: #fff; font-family: font-bold; font-size: 12px; border-radius: 3px;"></i>
+                                        style="border: 0; padding: 4px 8px; background-color: #c66; color: #fff; font-family: font-bold; font-size: 12px; border-radius: 3px;"></i>
                                     <span class="text-muted"
                                         style="padding-left:23px"><?php echo $item["total_amount"] ?></span>
                             </li>
