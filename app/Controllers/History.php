@@ -52,9 +52,11 @@ class History extends BaseController
         $user_id = session()->has('id') ? session()->get('id') : NULL;
         $order_id = $request->getPost('order_id');
 
-        // TODO valid order id of user
         $order_delivery_model = new OrderDelivery();
-        $order_delivery_model->update($order_id, ['status' => 4]);
+        $order_delivery_model
+            ->where(['user_id' => $user_id, 'id' => $order_id])
+            ->set(['status' => 4])
+            ->update();
 
         return redirect()->route('history');
     }
