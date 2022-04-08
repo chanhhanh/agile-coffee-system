@@ -29,16 +29,16 @@ class History extends BaseController
         ];
 
         // get num of type
-        foreach ($data_history['list_orders']->getResult() as $row)
-            if ($row->status == 0)
+        foreach ($data_history['list_orders'] as $row)
+            if ($row['status'] == 0)
                 $data_history['unconfirm']++;
-            elseif ($row->status == 1)
+            elseif ($row['status'] == 1)
                 $data_history['confirm']++;
-            elseif ($row->status == 2)
+            elseif ($row['status'] == 2)
                 $data_history['delivering']++;
-            elseif ($row->status == 3)
+            elseif ($row['status'] == 3)
                 $data_history['delivered']++;
-            elseif ($row->status == 4)
+            elseif ($row['status'] == 4)
                 $data_history['cancelled']++;
 
         echo view("templates/header", $data);
