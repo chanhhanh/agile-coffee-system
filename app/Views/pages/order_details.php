@@ -17,9 +17,10 @@
       </tr>
     </thead>
     <tbody>
+      <?php $STT = 1 ?>
       <?php foreach ($order_item as $item) : ?>
         <tr>
-          <th scope="row">1</th>
+          <th scope="row"><?= esc($STT++) ?></th>
           <td><?= esc($item['coffee_name']) ?></td>
           <td><?= esc($item['size']) ?></td>
           <td><?= esc($item['quantity']) ?></td>
