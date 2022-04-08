@@ -29,16 +29,16 @@ class History extends BaseController
         ];
 
         // get num of type
-        foreach ($data_history['list_orders']->getResult() as $row)
-            if ($row->order_id == 0)
+        foreach ($data_history['list_orders'] as $row)
+            if ($row['status'] == 0)
                 $data_history['unconfirm']++;
-            elseif ($row->order_id == 1)
+            elseif ($row['status'] == 1)
                 $data_history['confirm']++;
-            elseif ($row->order_id == 2)
+            elseif ($row['status'] == 2)
                 $data_history['delivering']++;
-            elseif ($row->order_id == 3)
+            elseif ($row['status'] == 3)
                 $data_history['delivered']++;
-            elseif ($row->order_id == 4)
+            elseif ($row['status'] == 4)
                 $data_history['cancelled']++;
 
         echo view("templates/header", $data);
@@ -52,9 +52,11 @@ class History extends BaseController
         $user_id = session()->has('id') ? session()->get('id') : NULL;
         $order_id = $request->getPost('order_id');
 
-        // TODO valid order id of user
         $order_delivery_model = new OrderDelivery();
-        $order_delivery_model->update($order_id, ['status' => 4]);
+        $order_delivery_model
+            ->where(['user_id' => $user_id, 'id' => $order_id])
+            ->set(['status' => 4])
+            ->update();
 
         return redirect()->route('history');
     }
