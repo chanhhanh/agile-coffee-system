@@ -11,7 +11,7 @@
   <div class="tab-pane fade show active between" id="nav-unconfirmed" role="tabpanel" aria-labelledby="nav-unconfirmed-tab">
     <?php foreach ($list_orders->getResult() as $order) : ?>
       <?php if ($order->status == 0) : ?>
-        <form action="<?php echo base_url("order/cancel") ?>" method="post">
+        <form id="cancel-order<?= esc($order->order_id) ?>" action="<?php echo base_url("order/cancel") ?>" method="post">
           <input type="hidden" name="order_id" value="<?= esc($order->order_id) ?>" />
           <div class="card-history mb-4">
             <div class="date-order"> Order at
@@ -42,7 +42,7 @@
                 </div>
               </div>
               <div class="flex-col-history">
-                <a class="btn-view-order-detail" href="<?php echo base_url("/order_details.php") ?>">View order details</a>
+                <a class="btn-view-order-detail" href="<?php echo base_url("order/details") . "/" . $order->order_id ?>">View order details</a>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal<?= esc($order->order_id) ?>">
                   Cancel
@@ -61,7 +61,7 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                        <button type="submit" class="btn btn-primary">Yes</button>
+                        <button type="submit" form="cancel-order<?= esc($order->order_id) ?>" class="btn btn-primary">Yes</button>
                       </div>
                     </div>
                   </div>
@@ -110,7 +110,7 @@
               </div>
             </div>
             <div class="flex-col-history">
-              <a class="btn-view-order-detail" href="<?php echo base_url("/order_details.php") ?>">View order details</a>
+              <a class="btn-view-order-detail" href="<?php echo base_url("order/details") . "/" . $order->order_id ?>">View order details</a>
               <a class="btn-order-again" href="<?php echo base_url("") ?>">Order again</a>
             </div>
           </div>
@@ -154,7 +154,7 @@
               </div>
             </div>
             <div class="flex-col-history">
-              <a class="btn-view-order-detail" href="<?php echo base_url("/order_details.php") ?>">View order details</a>
+              <a class="btn-view-order-detail" href="<?php echo base_url("order/details") . "/" . $order->order_id ?>">View order details</a>
               <a class="btn-order-again" href="<?php echo base_url("") ?>">Order again</a>
             </div>
           </div>
@@ -198,7 +198,7 @@
               </div>
             </div>
             <div class="flex-col-history">
-              <a class="btn-view-order-detail" href="<?php echo base_url("/order_details.php") ?>">View order details</a>
+              <a class="btn-view-order-detail" href="<?php echo base_url("order/details") . "/" . $order->order_id ?>">View order details</a>
               <a class="btn-order-again" href="<?php echo base_url("") ?>">Order again</a>
             </div>
           </div>
@@ -242,7 +242,7 @@
               </div>
             </div>
             <div class="flex-col-history">
-              <a class="btn-view-order-detail" href="<?php echo base_url("/order_details.php") ?>">View order details</a>
+              <a class="btn-view-order-detail" href="<?php echo base_url("order/details") . "/" . $order->order_id ?>">View order details</a>
               <a class="btn-order-again" href="<?php echo base_url("") ?>">Order again</a>
             </div>
           </div>

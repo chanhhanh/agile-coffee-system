@@ -5,6 +5,9 @@ namespace App\Controllers;
 use App\Models\CartModel;
 use App\Models\CoffeeModel;
 use App\Models\AddressModel;
+use App\Models\OrderItemDelivery;
+use App\Models\OrderDelivery;
+
 
 
 class Order extends BaseController
@@ -99,6 +102,28 @@ class Order extends BaseController
         $data["addresses"] = $model->getUserAddress($user_id);
         echo view("templates/header", $data);
         echo view("pages/delivery");
+        echo view("templates/footer");
+    }
+
+    public function details($order_id)
+    {
+        $order_item_delivery_model = new OrderItemDelivery();
+        $order_delivery_model = new OrderDelivery();
+        $cart_model = new CartModel();
+
+        $user_id = session()->has('id') ? session()->get('id') : NULL;
+
+        $data = [
+            'cart_item' => $cart_model->getUserCart($user_id),
+        ];
+
+        $data_body = [
+            'order_item' => $order_item_delivery_model->orderDetails($user_id, $order_id),
+            'order' => $order_delivery_model->find($order_id)
+        ];
+
+        echo view("templates/header", $data);
+        echo view("pages/order_details", $data_body);
         echo view("templates/footer");
     }
 }
