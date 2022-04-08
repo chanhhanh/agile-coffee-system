@@ -127,3 +127,6 @@ nb-configuration.xml
 
 # Dependencies
 /node_modules
+
+# SQL
+*.sql
