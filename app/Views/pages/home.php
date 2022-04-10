@@ -3,16 +3,20 @@
 <div class="main">
     <!-- carousel -->
     <div class="cart-ss1-right">
-    <div class="change-quantity decrease">-</div>
+        <!-- <div class="change-quantity decrease">-</div>
     <div class="amount">1</div>
-    <div class="change-quantity increase">+</div>
+    <div class="change-quantity increase">+</div> -->
     </div>
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" style=" transition: transform 1s ease-out, opacity .5s ease-out;">
@@ -48,25 +52,29 @@
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
         <div class="back-overlay px-5">
             <?php if (!empty(session()->get('username'))) : ?>
-                <div class="container h-75 mt-3 d-flex flex-row-reverse px-5">
-                    <div class="bg-white h-100 w-25 rounded d-flex flex-column align-items-center justify-content-center" style="--bs-bg-opacity: .65;">
-                        <div>
-                            <h5 class=" fw-light">Good morning, <?php echo session()->get('username') ?></h5>
-                        </div>
-                        <a class="btn btn-secondary m-2 w-75 shadow-none fw-light" href="#" role="button">Pick Up</a>
-                        <a class="btn btn-secondary m-2 w-75 shadow-none fw-light" href="<?= base_url("delivery") ?>" role="button">Delivery</a>
+            <div class="container h-75 mt-3 d-flex flex-row-reverse px-5">
+                <div class="bg-white h-100 w-25 rounded d-flex flex-column align-items-center justify-content-center"
+                    style="--bs-bg-opacity: .65;">
+                    <div>
+                        <h5 class=" fw-light">Good morning, <?php echo session()->get('username') ?></h5>
                     </div>
+                    <a class="btn btn-secondary m-2 w-75 shadow-none fw-light" href="#" role="button">Pick Up</a>
+                    <a class="btn btn-secondary m-2 w-75 shadow-none fw-light" href="<?= base_url("delivery") ?>"
+                        role="button">Delivery</a>
                 </div>
+            </div>
             <?php endif; ?>
         </div>
     </div>
@@ -92,31 +100,33 @@
                     </div>
                 </div>
                 <?php foreach ($top_5_popular as $coffee) : ?>
-                    <?php
+                <?php
                     $hover = $coffee["sold_out"] != 0 ?  "text-black-50 disabled" :  "coffee_hover text-dark";
                     $link =  $coffee["sold_out"] != 0 ?   base_url() : base_url("coffee/" . $coffee["id"]);
                     ?>
-                    <div class="row rounded py-1 <?= $hover ?>">
-                        <div class="col-6">
-                            <a class="text-decoration-none my-1 <?= $hover ?>" href="<?= $link ?>">
-                                <p class="my-1"><?php echo $coffee["coffee_name"] ?></p>
-                            </a>
-                        </div>
-                        <div class="col-sm">
-                            <p class="my-1"><?php echo $coffee["price_s"] ?></p>
-                        </div>
-                        <div class="col-sm">
-                            <p class="my-1"><?php echo $coffee["price_m"] ?></p>
-                        </div>
-                        <div class="col-sm">
-                            <p class="my-1"><?php echo $coffee["price_l"] ?></p>
-                        </div>
-                        <div class="col-sm">
-                            <a class="link-secondary text-decoration-none my-1 add" onclick="getCoffee(<?= $coffee['id'] ?>,'<?= $coffee['coffee_name'] ?>')" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <u class="my-1">Add</u>
-                            </a>
-                        </div>
+                <div class="row rounded py-1 <?= $hover ?>">
+                    <div class="col-6">
+                        <a class="text-decoration-none my-1 <?= $hover ?>" href="<?= $link ?>">
+                            <p class="my-1"><?php echo $coffee["coffee_name"] ?></p>
+                        </a>
                     </div>
+                    <div class="col-sm">
+                        <p class="my-1"><?php echo $coffee["price_s"] ?></p>
+                    </div>
+                    <div class="col-sm">
+                        <p class="my-1"><?php echo $coffee["price_m"] ?></p>
+                    </div>
+                    <div class="col-sm">
+                        <p class="my-1"><?php echo $coffee["price_l"] ?></p>
+                    </div>
+                    <div class="col-sm">
+                        <a class="link-secondary text-decoration-none my-1 add"
+                            onclick="getCoffee(<?= $coffee['id'] ?>,'<?= $coffee['coffee_name'] ?>')" href="#"
+                            data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <u class="my-1">Add</u>
+                        </a>
+                    </div>
+                </div>
                 <?php endforeach; ?>
             </div>
             <div class="col-lg">
@@ -137,31 +147,33 @@
                     </div>
                 </div>
                 <?php foreach ($seasonal_coffee as $coffee) : ?>
-                    <?php
+                <?php
                     $hover = $coffee["sold_out"] != 0 ?  "text-black-50 disabled" :  "coffee_hover text-dark";
                     $link =  $coffee["sold_out"] != 0 ?   "#" : base_url("coffee/" . $coffee["id"]);
                     ?>
-                    <div class="row rounded py-1 <?= $hover ?>">
-                        <div class="col-6">
-                            <a class="text-decoration-none my-1 <?= $hover ?>" href="<?= $link ?>">
-                                <p class="my-1"><?php echo $coffee["coffee_name"] ?></p>
-                            </a>
-                        </div>
-                        <div class="col-sm">
-                            <p class="my-1"><?php echo $coffee["price_s"] ?></p>
-                        </div>
-                        <div class="col-sm">
-                            <p class="my-1"><?php echo $coffee["price_m"] ?></p>
-                        </div>
-                        <div class="col-sm">
-                            <p class="my-1"><?php echo $coffee["price_l"] ?></p>
-                        </div>
-                        <div class="col-sm">
-                            <a class="link-secondary text-decoration-none my-1 add" onclick="getCoffee(<?= $coffee['id'] ?>,'<?= $coffee['coffee_name'] ?>')" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <u class="my-1">Add</u>
-                            </a>
-                        </div>
+                <div class="row rounded py-1 <?= $hover ?>">
+                    <div class="col-6">
+                        <a class="text-decoration-none my-1 <?= $hover ?>" href="<?= $link ?>">
+                            <p class="my-1"><?php echo $coffee["coffee_name"] ?></p>
+                        </a>
                     </div>
+                    <div class="col-sm">
+                        <p class="my-1"><?php echo $coffee["price_s"] ?></p>
+                    </div>
+                    <div class="col-sm">
+                        <p class="my-1"><?php echo $coffee["price_m"] ?></p>
+                    </div>
+                    <div class="col-sm">
+                        <p class="my-1"><?php echo $coffee["price_l"] ?></p>
+                    </div>
+                    <div class="col-sm">
+                        <a class="link-secondary text-decoration-none my-1 add"
+                            onclick="getCoffee(<?= $coffee['id'] ?>,'<?= $coffee['coffee_name'] ?>')" href="#"
+                            data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <u class="my-1">Add</u>
+                        </a>
+                    </div>
+                </div>
                 <?php endforeach; ?>
             </div>
         </div>
