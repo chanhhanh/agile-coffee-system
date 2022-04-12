@@ -9,11 +9,12 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./public/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Font awesome -->
     <link rel="stylesheet" href="./public/font-awesome/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"> -->
     <!-- Custom css-->
-    <link rel="stylesheet" href="./public/css/order-detail.css" type="text/css">
+    <link rel="stylesheet" href=".public/css/order-confirm.css">
 </head>
 
 <body>
@@ -91,11 +92,26 @@
                                     aria-describedby="nameHelp" placeholder="Your full name"
                                     value="<?php echo session()->get('fullname'); ?>">
                             </div>
+
+                            <!--  -->
                             <!-- <div class="col-md-12">
                                 <label for="exampleInputAddress">Address</label>
                                 <input type="text" class="form-control" id="exampleInputAddress"
                                     aria-describedby="addressHelp" placeholder="Your address">
                             </div> -->
+
+
+                            <!-- <div class="col-md-12 input-group">
+                                <label for="exampleInputAddress" style="flex: 0 0 auto; width: 100%;">Address</label>
+                                <input type="text" class="form-control" id="exampleInputAddress"
+                                    aria-describedby="addressHelp" placeholder="Your address">
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary" type="button">
+                                        <i class="bi bi-arrow-up-right-square"></i>
+                                    </button>
+                                </div>
+                            </div> -->
+                            <!--  -->
                             <div class="col-md-12">
                                 <label for="exampleInputPhone">Phone</label>
                                 <input id="exampleInputPhone" name="areaNo" class="form-control" type="tel" required
