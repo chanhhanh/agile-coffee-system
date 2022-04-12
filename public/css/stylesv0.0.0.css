@@ -1,3 +1,5 @@
+$primary: purple;
+$danger: red;
 .intro {
   background: url("../img/harold.jpg");
   /* background-size: cover; */
