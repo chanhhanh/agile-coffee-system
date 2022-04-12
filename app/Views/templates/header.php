@@ -42,10 +42,10 @@
                           <?php if ($item['sweetness'] != 0 || $item['milk'] != 0) : ?>
                             <td>Customized:
                               <?php if ($item["sweetness"] != 0) { ?>
-                                Sweetness <?php echo $item["sweetness"] ?>
+                                <h6>Sweetness <?php echo $item["sweetness"] ?></h6>
                               <?php } ?>
                               <?php if ($item["milk"] != 0) { ?>
-                                Milk <?php echo $item["milk"] ?>
+                                <h6>Milk <?php echo $item["milk"] ?></h6>
                               <?php } ?></td>
                           <?php endif; ?>
                         </tr>
