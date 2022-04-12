@@ -91,11 +91,11 @@
                                     aria-describedby="nameHelp" placeholder="Your full name"
                                     value="<?php echo session()->get('fullname'); ?>">
                             </div>
-                            <div class="col-md-12">
+                            <!-- <div class="col-md-12">
                                 <label for="exampleInputAddress">Address</label>
                                 <input type="text" class="form-control" id="exampleInputAddress"
                                     aria-describedby="addressHelp" placeholder="Your address">
-                            </div>
+                            </div> -->
                             <div class="col-md-12">
                                 <label for="exampleInputPhone">Phone</label>
                                 <input id="exampleInputPhone" name="areaNo" class="form-control" type="tel" required
