@@ -15,11 +15,11 @@
             <input type="password" class="form-control" name="password" id="password" value="" placeholder="Enter password...">
           </div>
           <?php if (isset($validation)) { ?>
-            <div class="alert m-auto text-danger" role="alert">
+            <div class="alert m-auto text-primary" role="alert">
               <?php echo $validation->listErrors(); ?>
             </div>
           <?php } ?>
         </div>
-        <button type="submit" class="btn btn-danger col-12 mt-2">Signin</button>
+        <button type="submit" class="btn btn-primary col-12 mt-2">Signin</button>
       </form>
     </div>
