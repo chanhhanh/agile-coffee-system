@@ -21,4 +21,34 @@
             </button>
         </form>
     </div>
+    <div id="map"></div>
 </div>
+<script>
+    let defaultCoord = [10.7743, 106.6669]; // coord mặc định, 9 giữa HCMC
+	let zoomLevel = 13;
+	let mapConfig = {
+		attributionControl: false, // để ko hiện watermark nữa
+		center: defaultCoord, // vị trí map mặc định hiện tại
+		zoom: zoomLevel, // level zoom
+	};
+	
+	window.onload = function() {
+		// init map
+		mapObj = L.map('map', {attributionControl: false}).setView(defaultCoord, zoomLevel);
+		
+		// add tile để map có thể hoạt động, xài free từ OSM
+		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+			attribution: '© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+		}).addTo(mapObj);
+        let marker = L.marker([10.761175, 106.682314]).addTo(mapObj);
+        let popup = L.popup();
+		popup.setContent("<b>Harold's Coffee</b>");
+		marker.bindPopup(popup);
+        L.Routing.control({
+            waypoints: [
+                L.latLng(10.761175, 106.682314),
+                L.latLng(10.771564, 106.644510),
+            ],
+        }).addTo(mapObj);
+	};
+</script>
