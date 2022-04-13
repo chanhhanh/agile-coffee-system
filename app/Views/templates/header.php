@@ -5,18 +5,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="<?php echo base_url('/css/custom-bootstrap.css') ?>" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap" rel="stylesheet">
-  <link href=<?php echo base_url('/css/stylesv0.0.0.css') ?> rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
   <title>Harold's Coffee</title>
 </head>
 
-<body>
+<body style="min-height: 100vh; height: 100vh" class="d-flex flex-column">
   <div class="shadow-sm rounded sticky-top">
-    <nav class="navbar navbar-light bg-light justify-content-end">
+    <nav class="navbar navbar-light bg-primary justify-content-end">
       <ul class="navbar-nav flex-row mx-5 swap3">
         <?php
         $uri = service('uri');
@@ -46,7 +45,8 @@
                               <?php } ?>
                               <?php if ($item["milk"] != 0) { ?>
                                 <h6>Milk <?php echo $item["milk"] ?></h6>
-                              <?php } ?></td>
+                              <?php } ?>
+                            </td>
                           <?php endif; ?>
                         </tr>
                         <?php $sum += $item["total_amount"] ?>
@@ -125,31 +125,31 @@
                     cart</li> -->
       </ul>
     </nav>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light px-5 frontof">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary px-5 frontof">
       <a class="navbar-brand" style="font-family: 'Sansita Swashed', cursive;" href="<?php echo base_url(); ?>">Harold's
         Coffee</a>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav font-weight-normal">
           <li class="nav-item">
-            <a class="nav-link text-dark" href="<?php echo base_url("/menu") ?>">Menu</a>
+            <a class="nav-link active" aria-current="page" href="<?php echo base_url("/menu") ?>">Menu</a>
           </li>
           <li class="nav-item">
             <span class="nav-link px-0">|</span>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Store</a>
+            <a class="nav-link" href="#">Store</a>
           </li>
           <li class="nav-item">
             <span class="nav-link px-0">|</span>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Help</a>
+            <a class="nav-link" href="#">Help</a>
           </li>
           <li class="nav-item">
             <span class="nav-link px-0">|</span>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href="<?php echo base_url("/history") ?>">History</a>
+            <a class="nav-link" href="<?php echo base_url("/history") ?>">History</a>
           </li>
         </ul>
       </div>

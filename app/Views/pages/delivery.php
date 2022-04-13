@@ -16,7 +16,7 @@
                     <div class="my-2 fw-light fs-6"><?= $address['address'] ?></div>
                 <?php endforeach ?>
             </div>
-            <button type="submit" id="submit" onclick="setAmount()" class="btn btn-secondary shadow-none mt-5 float-end">
+            <button type="submit" id="submit" onclick="setAmount()" class="btn btn-primary shadow-none mt-5 float-end">
                 Set Delivery Time
             </button>
         </form>
