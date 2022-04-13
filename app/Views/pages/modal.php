@@ -74,7 +74,7 @@ $quantity = isset($_SESSION["quantity"]) ? $_SESSION["quantity"] : 0;
                 </div>
             </div>
             <div class="modal-footer justify-content-center">
-                <button type="submit" id="submit" onclick="setAmount()" class="btn btn-success shadow-none fw-light">
+                <button type="submit" id="submit" onclick="setAmount()" class="btn btn-secondary shadow-none fw-light">
                     Add To Shopping Cart
                 </button>
             </div>

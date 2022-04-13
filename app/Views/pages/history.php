@@ -18,13 +18,13 @@
               <div class="date-order"> Order at
                 <div style="margin-left: 5px;"><?= esc($order['ordered_at']) ?></div>
               </div>
-              <div class="flex-row-history space-history">
+              <div class="flex-row-history">
                 <div class="flex-row-history ">
                   <div>
                     <img src="<?php echo base_url("/img/coffee.jpg") ?>" alt="..." class="img-coffee"></img>
                   </div>
                   <div class="flex-col-history margin-1">
-                    <div class="flex-row-history space-history">
+                    <div class="flex-row-history ">
                       <div class="bold-history margin-2">ID order: </div>
                       <div><?= esc($order['order_id']) ?></div>
                     </div>
@@ -43,7 +43,7 @@
                   </div>
                 </div>
                 <div class="flex-col-history">
-                  <a class="btn btn-outline-secondary mb-2" href="<?php echo base_url("order/details") . "/" . $order['order_id'] ?>">View order details</a>
+                  <a class="btn btn btn-outline-secondary mb-2" href="<?php echo base_url("order/details") . "/" . $order['order_id'] ?>">View order details</a>
                   <!-- Button trigger modal -->
                   <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal<?= esc($order['order_id']) ?>">
                     Cancel
@@ -61,8 +61,8 @@
                           Are you sure you want to cancel your order?
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
-                          <button type="submit" form="cancel-order<?= esc($order['order_id']) ?>" class="btn btn-primary">Yes</button>
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                          <button type="submit" form="cancel-order<?= esc($order['order_id']) ?>" class="btn btn-purple">Yes</button>
                         </div>
                       </div>
                     </div>
@@ -82,7 +82,7 @@
     <div class="tab-pane fade between" id="nav-confirmed" role="tabpanel" aria-labelledby="nav-confirmed-tab">
       <?php foreach ($list_orders as $order) : ?>
         <?php if ($order['status'] == 1) : ?>
-          <div class="card-history mb-4">
+          <div class="card-history mb-5">
             <div class="date-order"> Order at
               <div style="margin-left: 5px;"><?= esc($order['ordered_at']) ?></div>
             </div>
@@ -92,7 +92,7 @@
                   <img src="<?php echo base_url("/img/coffee.jpg") ?>" alt="..." class="img-coffee"></img>
                 </div>
                 <div class="flex-col-history margin-1">
-                  <div class="flex-row-history space-history">
+                  <div class="flex-row-history">
                     <div class="bold-history margin-2">ID order: </div>
                     <div><?= esc($order['order_id']) ?></div>
                   </div>
@@ -111,8 +111,10 @@
                 </div>
               </div>
               <div class="flex-col-history">
-                <a class="btn btn-outline-secondary mb-2" href="<?php echo base_url("order/details") . "/" . $order['order_id'] ?>">View order details</a>
-                <a class="btn-order-again" href="<?php echo base_url("") ?>">Order again</a>
+                <a class="btn btn btn-outline-secondary mb-2" href="<?php echo base_url("order/details") . "/" . $order['order_id'] ?>">View order details</a>
+                <a class="btn btn btn-secondary" href="<?php echo base_url("") ?>">
+                  Order again
+                </a>
               </div>
             </div>
           </div>
@@ -136,7 +138,7 @@
                   <img src="<?php echo base_url("/img/coffee.jpg") ?>" alt="..." class="img-coffee"></img>
                 </div>
                 <div class="flex-col-history margin-1">
-                  <div class="flex-row-history space-history">
+                  <div class="flex-row-history">
                     <div class="bold-history margin-2">ID order: </div>
                     <div><?= esc($order['order_id']) ?></div>
                   </div>
@@ -155,8 +157,10 @@
                 </div>
               </div>
               <div class="flex-col-history">
-                <a class="btn btn-outline-secondary mb-2" href="<?php echo base_url("order/details") . "/" . $order['order_id'] ?>">View order details</a>
-                <a class="btn-order-again" href="<?php echo base_url("") ?>">Order again</a>
+                <a class="btn btn btn-outline-secondary mb-2" href="<?php echo base_url("order/details") . "/" . $order['order_id'] ?>">View order details</a>
+                <a class="btn btn btn-secondary" href="<?php echo base_url("") ?>">
+                  Order again
+                </a>
               </div>
             </div>
           </div>
@@ -180,7 +184,7 @@
                   <img src="<?php echo base_url("/img/coffee.jpg") ?>" alt="..." class="img-coffee"></img>
                 </div>
                 <div class="flex-col-history margin-1">
-                  <div class="flex-row-history space-history">
+                  <div class="flex-row-history">
                     <div class="bold-history margin-2">ID order: </div>
                     <div><?= esc($order['order_id']) ?></div>
                   </div>
@@ -199,8 +203,11 @@
                 </div>
               </div>
               <div class="flex-col-history">
-                <a class="btn btn-outline-secondary mb-2" href="<?php echo base_url("order/details") . "/" . $order['order_id'] ?>">View order details</a>
-                <a class="btn-order-again" href="<?php echo base_url("") ?>">Order again</a>
+                <a class="btn btn btn-outline-secondary mb-2" href="<?php echo base_url("order/details") . "/" . $order['order_id'] ?>">View order details</a>
+                <a class="btn btn btn-secondary" href="<?php echo base_url("") ?>">
+                  Order again
+                  <!-- </button> -->
+                </a>
               </div>
             </div>
           </div>
@@ -224,7 +231,7 @@
                   <img src="<?php echo base_url("/img/coffee.jpg") ?>" alt="..." class="img-coffee"></img>
                 </div>
                 <div class="flex-col-history margin-1">
-                  <div class="flex-row-history space-history">
+                  <div class="flex-row-history">
                     <div class="bold-history margin-2">ID order: </div>
                     <div><?= esc($order['order_id']) ?></div>
                   </div>
@@ -243,8 +250,10 @@
                 </div>
               </div>
               <div class="flex-col-history">
-                <a class="btn btn-outline-secondary mb-2" href="<?php echo base_url("order/details") . "/" . $order['order_id'] ?>">View order details</a>
-                <a class="btn-order-again" href="<?php echo base_url("") ?>">Order again</a>
+                <a class="btn btn btn-outline-secondary mb-2" href="<?php echo base_url("order/details") . "/" . $order['order_id'] ?>">View order details</a>
+                <a class="btn btn btn-secondary" href="<?php echo base_url("") ?>">
+                  Order again
+                </a>
               </div>
             </div>
           </div>
