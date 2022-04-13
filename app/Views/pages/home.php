@@ -63,8 +63,8 @@
                         <div>
                             <h5 class=" fw-light">Good morning, <?php echo session()->get('username') ?></h5>
                         </div>
-                        <a class="btn btn-primary m-2 w-75 shadow-none fw-light" href="#" role="button">Pick Up</a>
-                        <a class="btn btn-primary m-2 w-75 shadow-none fw-light" href="<?= base_url("delivery") ?>" role="button">Delivery</a>
+                        <a class="btn btn-secondary m-2 w-75 shadow-none fw-light" href="#" role="button">Pick Up</a>
+                        <a class="btn btn-secondary m-2 w-75 shadow-none fw-light" href="<?= base_url("delivery") ?>" role="button">Delivery</a>
                     </div>
                 </div>
             <?php endif; ?>
@@ -112,8 +112,8 @@
                             <p class="my-1"><?php echo $coffee["price_l"] ?></p>
                         </div>
                         <div class="col-sm">
-                            <a class="link-secondary text-decoration-none my-1 add" onclick="getCoffee(<?= $coffee['id'] ?>,'<?= $coffee['coffee_name'] ?>')" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <u class="my-1">Add</u>
+                            <a class="btn btn-white text-decoration-none my-1 add " onclick="getCoffee(<?= $coffee['id'] ?>,'<?= $coffee['coffee_name'] ?>')" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <u class="my-1 text-decoration-none">Add</u>
                             </a>
                         </div>
                     </div>
@@ -157,8 +157,8 @@
                             <p class="my-1"><?php echo $coffee["price_l"] ?></p>
                         </div>
                         <div class="col-sm">
-                            <a class="link-secondary text-decoration-none my-1 add" onclick="getCoffee(<?= $coffee['id'] ?>,'<?= $coffee['coffee_name'] ?>')" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <u class="my-1">Add</u>
+                            <a class="btn btn-white  text-decoration-none my-1 add" onclick="getCoffee(<?= $coffee['id'] ?>,'<?= $coffee['coffee_name'] ?>')" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <u class="my-1 text-decoration-none">Add</u>
                             </a>
                         </div>
                     </div>
@@ -182,7 +182,7 @@
                     </div>
                     <div class="col-sm">
                         <a class="link-secondary text-decoration-none my-1" href="<?php echo base_url() ?>">
-                            <a class="my-1 link-secondary" href="<?php echo base_url("/menu") ?>">Explore Full Menu</u>
+                            <a class="btn btn-secondary my-1 link-secondary" href="<?php echo base_url("/menu") ?>">Explore Full Menu -></u>
                             </a>
                     </div>
                 </div>
