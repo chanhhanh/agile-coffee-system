@@ -1,0 +1,254 @@
+/* custom.scss */    
+
+/* import the necessary Bootstrap files */
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+/* make changes to the !default Bootstrap variables */  
+$primary: #0E0E0E;
+$secondary: #9F613C;
+$tertiary: white ;
+$background: #fff;
+$button: #4E9F3D;
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $button,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+
+$navbar-light-active-color: $tertiary; 
+$navbar-light-color: $tertiary;
+$navbar-light-brand-color: $tertiary;
+        
+
+$navbar-light-hover-color: $secondary;
+$navbar-light-brand-hover-color: $secondary;
+$body-bg: $background;
+/* finally, import Bootstrap to set the changes! */
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+
+.intro {
+  background: url("../img/harold.jpg");
+  /* background-size: cover; */
+  background-attachment: fixed;
+  /* background-position: center; */
+  height: 70vh;
+}
+
+.back-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  z-index: 0;
+}
+
+.add {
+  display: none;
+}
+
+.coffee_hover:hover {
+  background-color: #e9ecef;
+}
+
+.coffee_hover:hover .col_sm {
+  background-color: #e9ecef;
+}
+
+.coffee_hover:hover .add {
+  display: block;
+  background-color: #e9ecef;
+}
+
+.disabled {
+  pointer-events: none;
+}
+.dropdown-menu{
+  z-index: 99;
+}
+.swapCart{
+  position: relative;
+}
+.swap3{
+    display: flex;
+    gap: 20px;
+}
+.frontof{
+  z-index: -1;
+}
+.navbar-nav .dropdown-menu{
+  position: absolute!important;
+  right: 0;
+  width: 300px;
+  top: calc(100% + 5px);
+}
+.dropdown-toggle::after{
+  all:unset;
+}
+
+.product-quantity input{
+  width: 40px;
+}
+.product-quantity {
+  float: left; 
+  width: 10%;
+}
+.product-quantity:before {
+  content: 'x';
+}
+.remove-product {
+  border: 0;
+  padding: 4px 8px;
+  background-color: #c66;
+  color: #fff;
+  font-family: font-bold;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.bg-footer {
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+}
+
+.row-history{
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-around;
+}
+
+.form-history {
+  width: 60%;
+  margin: 0 auto !important;
+  margin-top: 20px !important;
+}
+
+
+
+.table-history {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.col-history {padding-bottom: 5px !important;}
+
+
+
+.repurchase-history {
+  background-color: #276678;
+  color: #fff;
+  width: 100px;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 12px;
+  border: #276678;
+}
+
+.form-content-history {
+  margin: 10px;
+}
+
+.between {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.flex-row-history {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flex-col-history {
+  display: flex;
+  flex-direction: column;
+  
+
+}
+
+.space-history {
+  justify-content:space-between;
+}
+
+.img-coffee {
+  width: 100%;
+  height: 100px;
+}
+.card-history {
+  margin: 0 auto; 
+  width: 40%;
+  border: 1px solid $tertiary;
+  border-radius: 10px;
+  padding:10px 30px 30px 30px;
+  background-color: $tertiary;
+}
+
+.margin-1 {margin-left: 20px;}
+
+.btn-order-again {
+  border: 1px solid $button;
+  background: $button;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+}
+.btn-view-order-detail:hover{
+  color: $button;
+  border: 1px solid $button;
+}
+
+.btn-order-again:hover{
+  background: $button;
+  border: 1px solid 117248;
+  color: #fff;
+}
+
+.nav-link {
+  color: $primary;
+}
+.nav-link:hover {color: $button;} 
+.bold-history{
+  font-weight: bold;
+}
+.margin-2 {margin-right: 7px;}
+.totals-in-history{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  font-weight: 500;
+}
+
+.date-order{
+  color: #756e6e; 
+  display: flex; margin-right: 5px; 
+  margin-bottom: 10px;
+  justify-content: flex-end;
+
+}
+
+.btn-view-order-detail {
+  margin-bottom: 8px;
+  border: 1px solid $button;
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  color: $button;
+  text-decoration: none;
+}
