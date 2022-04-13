@@ -40,6 +40,7 @@ $routes->match(['get', 'post'], '/delivery', 'Order::delivery');
 $routes->match(['get'], '/history', 'History::index');
 $routes->match(['get'], '/order/details/(:num)', 'Order::details/$1');
 $routes->match(['post'], '/order/cancel', 'History::cancelOrder');
+$routes->get('/order/delete/(:num)', 'Cart::Delete/$1');
 
 $routes->get('(:any)', 'Pages::showme/$1');
 $routes->post('/add', 'Order::AddToCart');

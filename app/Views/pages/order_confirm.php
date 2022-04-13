@@ -47,15 +47,17 @@
 
                                 <div class="product-quantity" style="width: 52px; margin-left: 10px">
                                     <input type="number" value="<?php echo $item["quantity"] ?>" min="1"
-                                        style="width:40px">
+                                        style="width:40px" disabled>
                                 </div>
                                 <div class="product-removal" style="margin-right: -18px; width: 95px">
                                     <!-- <button class="remove-product"
                                             style="border: 0; padding: 4px 8px; background-color: #c66; color: #fff; font-family: font-bold; font-size: 12px; border-radius: 3px;">
                                             Remove
                                         </button> -->
-                                    <i class="bi bi-trash3 remove-product"
-                                        style="border: 0; padding: 4px 8px; background-color: #c66; color: #fff; font-family: font-bold; font-size: 12px; border-radius: 3px;"></i>
+                                        <a href="<?= base_url("/order/delete")."/".$item["id"] ?>">
+                                            <i class="bi bi-trash3 remove-product"
+                                            style="border: 0; padding: 4px 8px; background-color: #c66; color: #fff; font-family: font-bold; font-size: 12px; border-radius: 3px;"></i>
+                                        </a>
                                     <span class="text-muted"
                                         style="padding-left:15px"><?php echo $item["total_amount"] ?></span>
                             </li>

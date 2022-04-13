@@ -11,7 +11,7 @@ class CartModel extends Model
     public function getUserCart($uid = null)
     {
         return $this->asArray()
-            ->select('coffee_list.id, coffee_name, size, quantity, sweetness, milk, total_amount')
+            ->select('cart_item.id, coffee_name, size, quantity, sweetness, milk, total_amount')
             ->join('coffee_list', 'coffee_list.id = product_id')
             ->where(['user_id' => $uid])
             ->findAll();
@@ -21,5 +21,10 @@ class CartModel extends Model
         return $this->asArray()
             ->where(['product_id' => $pid, 'size' => $size, 'sweetness' => $sweetness, 'milk' => $milk])
             ->find();
+    }
+    public function DeleteItem($cart_id = null)
+    {
+        $this->where(['id' => $cart_id])
+            ->delete();
     }
 }
