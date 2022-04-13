@@ -58,7 +58,14 @@
   right: 0;
   width: 300px;
   top: calc(100% + 5px);
+  
 }
+
+.cart-detail{
+  max-height: 300px;
+  overflow: auto;
+}
+
 .dropdown-toggle::after{
   all:unset;
 }
