@@ -38,49 +38,25 @@ $nav-tabs-link-active-color: $primary;
 /* finally, import Bootstrap to set the changes! */
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-.btn-primary {
-  &:hover {
-    color: $secondary;
-    // @include gradient-bg($hover-background);
-    background-color: white;
-    border-color: $secondary;
-  }
-}
-
 .btn-secondary {
   color: #fff;
   background-color: $secondary;
   border-color: $secondary;
+  &:hover {
+    color: $secondary;
+    // @include gradient-bg($hover-background);
+    background-color: $white;
+    border-color: $secondary;
+  }
+
 }
+
 .btn-outline-secondary:hover {
-  color: #fff;
+  color: $white;
   background-color: $secondary;
   border-color: $secondary;
 }
-.btn-secondary:hover {
-  color: $secondary;
-  background-color: #fff;
-  border-color: #ff871a;
-}
-.btn-check:focus + .btn-secondary, .btn-secondary:focus {
-  color: $white;
-  background-color: #ff8e26;
-  border-color: #ff871a;
-  box-shadow: 0 0 0 0.25rem rgba(217, 104, 0, 0.5);
-}
-.btn-check:checked + .btn-secondary, .btn-check:active + .btn-secondary, .btn-secondary:active, .btn-secondary.active, .show > .btn-secondary.dropdown-toggle {
-  color: $white;
-  background-color: #ff9533;
-  border-color: #ff871a;
-}
-.btn-check:checked + .btn-secondary:focus, .btn-check:active + .btn-secondary:focus, .btn-secondary:active:focus, .btn-secondary.active:focus, .show > .btn-secondary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem rgba(217, 104, 0, 0.5);
-}
-.btn-secondary:disabled, .btn-secondary.disabled {
-  color: $white;
-  background-color: #FF7A00;
-  border-color: #FF7A00;
-}
+
 .coffee_hover:hover {
   background-color: #FAEACB;
   color: $white;
@@ -93,20 +69,8 @@ $nav-tabs-link-active-color: $primary;
 
 .coffee_hover:hover .add {
   display: block;
-  background-color: #FAEACB;
-  color: $white;
 }
-.btn-white {
-  color: $white;
-  background-color: $white;
-  border-color: $white;
-  text-decoration: none;
-}
-.btn-white:hover {
-  color: $white;
-  background-color: $white;
-  border-color: $white;
-}
+
 .intro {
   background: url("../img/harold.jpg");
   /* background-size: cover; */
@@ -157,6 +121,9 @@ $nav-tabs-link-active-color: $primary;
 }
 .dropdown-toggle::after{
   all:unset;
+}
+.navbar {
+  align-items: flex-end;
 }
 
 .product-quantity input{
@@ -305,4 +272,10 @@ $nav-tabs-link-active-color: $primary;
   margin-top: auto;
   width: 100%;
   flex: 0 0 50px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@500&display=swap');
+.font-nav{
+  font-size: 20px;
+  font-family: 'Anek Devanagari', sans-serif;
 }
