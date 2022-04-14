@@ -18,7 +18,7 @@
               <div class="date-order"> Order at
                 <div style="margin-left: 5px;"><?= esc($order['ordered_at']) ?></div>
               </div>
-              <div class="flex-row-history">
+              <div class="flex-row-history space-history">
                 <div class="flex-row-history ">
                   <div>
                     <img src="<?php echo base_url("/img/coffee.jpg") ?>" alt="..." class="img-coffee"></img>
@@ -61,8 +61,8 @@
                           Are you sure you want to cancel your order?
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                          <button type="submit" form="cancel-order<?= esc($order['order_id']) ?>" class="btn btn-purple">Yes</button>
+                          <button type="button" class="btn btn-success" data-bs-dismiss="modal">No</button>
+                          <button type="submit" form="cancel-order<?= esc($order['order_id']) ?>" class="btn btn-danger">Yes</button>
                         </div>
                       </div>
                     </div>
@@ -242,7 +242,7 @@
                   <!-- <div class="flex-row-history">
                   <div class="bold-history margin-2">Size: </div>
                   <div>L, M, S</div>
-                </div> -->
+                  </div> -->
                   <div class="flex-row-history">
                     <div class="bold-history margin-2">Totals: </div>
                     <div><?= esc($order['total_amount_order']); ?></div>
