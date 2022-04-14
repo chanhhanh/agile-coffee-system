@@ -77,7 +77,7 @@
                   </div>
                   <div class="row mt-4">
                     <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
-                      <button class="btn btn-primary btn-block">
+                      <button class="btn btn-secondary btn-block">
                         <a href="<?php echo base_url("/order_confirm") ?>" style="color:white; text-decoration:none">
                           Checkout
                         </a>

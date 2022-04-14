@@ -44,8 +44,8 @@
                                     <p class="my-1"><?php echo $coffee["price_l"] ?></p>
                                 </div>
                                 <div class="col-sm">
-                                    <a class="btn btn-white  text-decoration-none my-1 add" onclick="getCoffee(<?= $coffee['id'] ?>,'<?= $coffee['coffee_name'] ?>')" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <u class="my-1">Add</u>
+                                    <a class="btn btn-secondary text-decoration-none my-1 add" onclick="getCoffee(<?= $coffee['id'] ?>,'<?= $coffee['coffee_name'] ?>')" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <u class="my-1 text-decoration-none">Add</u>
                                     </a>
                                 </div>
                             </div>

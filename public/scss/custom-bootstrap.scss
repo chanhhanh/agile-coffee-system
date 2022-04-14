@@ -14,7 +14,7 @@ $white: white;
 $theme-colors: (
   "primary":    $primary,
   "secondary":  $secondary,
-  "success":    $secondary,
+  "success":    $success,
   "info":       $info,
   "warning":    $warning,
   "danger":     $danger,
@@ -38,6 +38,7 @@ $nav-tabs-link-active-color: $primary;
 /* finally, import Bootstrap to set the changes! */
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+
 .btn-secondary {
   color: #fff;
   background-color: $secondary;
@@ -47,8 +48,10 @@ $nav-tabs-link-active-color: $primary;
     // @include gradient-bg($hover-background);
     background-color: $white;
     border-color: $secondary;
+    a {
+      color: $secondary !important;
+    }
   }
-
 }
 
 .btn-outline-secondary:hover {
