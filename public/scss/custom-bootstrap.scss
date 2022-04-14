@@ -6,9 +6,9 @@
 
 /* make changes to the !default Bootstrap variables */  
 $primary: #D44000;
-$secondary: #FF7A00;
+$secondary: #F3752D;
 $tertiary: white ;
-$background: white;
+$background: #FCFCFC;
 $purple: #6200EE;
 $white: white;
 $theme-colors: (
@@ -82,18 +82,18 @@ $nav-tabs-link-active-color: $primary;
   border-color: #FF7A00;
 }
 .coffee_hover:hover {
-  background-color: $secondary;
+  background-color: #FAEACB;
   color: $white;
 }
 
 .coffee_hover:hover .col_sm {
-  background-color: $secondary;
+  background-color: #FAEACB;
   color: $white;
 }
 
 .coffee_hover:hover .add {
   display: block;
-  background-color: $secondary;
+  background-color: #FAEACB;
   color: $white;
 }
 .btn-white {
@@ -300,4 +300,9 @@ $nav-tabs-link-active-color: $primary;
   margin-bottom: 10px;
   justify-content: flex-end;
 
+}
+.space-footer{
+  margin-top: auto;
+  width: 100%;
+  flex: 0 0 50px;
 }
