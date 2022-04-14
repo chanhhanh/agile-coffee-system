@@ -77,7 +77,7 @@
                             </div>
                         </div> -->
                         <hr class="mb-4">
-                        <button class="btn btn-primary btn-lg btn-block" type="submit" name="btnDatHang" style="margin-top: 0; margin-bottom: 0; margin-left: 353px; margin-right: 0;">Order</button>
+                        <button class="btn btn-secondary btn-lg btn-block" type="submit" name="btnDatHang" style="margin-top: 0; margin-bottom: 0; margin-left: 353px; margin-right: 0;">Order</button>
                     </div>
                     <div class="col-md-8 order-md-1" style="width: 600px; margin-left:30px">
                         <h4 class="mb-3">Customer information</h4>
