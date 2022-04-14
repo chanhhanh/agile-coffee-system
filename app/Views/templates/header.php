@@ -87,10 +87,10 @@
                 </div>
             </li>
             <li class=" nav-item <?= ($uri->getSegment(1) == 'user' ? 'active' : null) ?>">
-              <a class="nav-link px-2" href="<?php echo base_url('user'); ?>"><?php echo session()->get('username'); ?></a>
+              <a class="nav-link px-2" style="font-size: 18px" href="<?php echo base_url('user'); ?>"><?php echo session()->get('username'); ?></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link px-2" href="<?php echo base_url("logout") ?>">Logout</a>
+              <a class="nav-link px-2" style="font-size: 18px" href="<?php echo base_url("logout") ?>">Logout</a>
             </li>
             <script>
               let isOpen = false;
@@ -116,18 +116,18 @@
             </script>
           <?php else : ?>
             <li class="nav-item <?= ($uri->getSegment(1) == 'login' ? 'active' : null) ?>">
-              <a class="nav-link px-2" href="<?php echo base_url('login'); ?>">Login</a>
+              <a class="nav-link px-2" style="font-size: 18px" href="<?php echo base_url('login'); ?>">Login</a>
             </li>
             <li class="nav-item <?= ($uri->getSegment(1) == 'register' ? 'active' : null) ?>">
-              <a class="nav-link px-2" href="<?php echo base_url('register'); ?>">Signup</a>
+              <a class="nav-link px-2" style="font-size: 18px" href="<?php echo base_url('register'); ?>">Signup</a>
             </li>
           <?php endif; ?>
           <!-- <li class="nav-item">
                     cart</li> -->
         </ul>
       </nav>
-      <nav class="navbar navbar-expand-lg navbar-light bg-primary px-5 frontof">
-        <a class="navbar-brand" style="font-family: 'Sansita Swashed', cursive;" href="<?php echo base_url(); ?>">Harold's
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary px-5 frontof font-nav">
+        <a class="navbar-brand" style="font-family: 'Sansita Swashed', cursive; font-size: 30px" href="<?php echo base_url(); ?>">Harold's
           Coffee</a>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav font-weight-normal">

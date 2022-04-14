@@ -9,6 +9,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@500&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -11300,51 +11301,21 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.btn-primary:hover {
-  color: #F3752D;
-  background-color: white;
-  border-color: #F3752D;
-}
-
 .btn-secondary {
   color: #fff;
   background-color: #F3752D;
   border-color: #F3752D;
 }
-
-.btn-outline-secondary:hover {
-  color: #fff;
-  background-color: #F3752D;
+.btn-secondary:hover {
+  color: #F3752D;
+  background-color: white;
   border-color: #F3752D;
 }
 
-.btn-secondary:hover {
-  color: #F3752D;
-  background-color: #fff;
-  border-color: #ff871a;
-}
-
-.btn-check:focus + .btn-secondary, .btn-secondary:focus {
+.btn-outline-secondary:hover {
   color: white;
-  background-color: #ff8e26;
-  border-color: #ff871a;
-  box-shadow: 0 0 0 0.25rem rgba(217, 104, 0, 0.5);
-}
-
-.btn-check:checked + .btn-secondary, .btn-check:active + .btn-secondary, .btn-secondary:active, .btn-secondary.active, .show > .btn-secondary.dropdown-toggle {
-  color: white;
-  background-color: #ff9533;
-  border-color: #ff871a;
-}
-
-.btn-check:checked + .btn-secondary:focus, .btn-check:active + .btn-secondary:focus, .btn-secondary:active:focus, .btn-secondary.active:focus, .show > .btn-secondary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem rgba(217, 104, 0, 0.5);
-}
-
-.btn-secondary:disabled, .btn-secondary.disabled {
-  color: white;
-  background-color: #FF7A00;
-  border-color: #FF7A00;
+  background-color: #F3752D;
+  border-color: #F3752D;
 }
 
 .coffee_hover:hover {
@@ -11359,21 +11330,6 @@ textarea.form-control-lg {
 
 .coffee_hover:hover .add {
   display: block;
-  background-color: #FAEACB;
-  color: white;
-}
-
-.btn-white {
-  color: white;
-  background-color: white;
-  border-color: white;
-  text-decoration: none;
-}
-
-.btn-white:hover {
-  color: white;
-  background-color: white;
-  border-color: white;
 }
 
 .intro {
@@ -11428,6 +11384,10 @@ textarea.form-control-lg {
 
 .dropdown-toggle::after {
   all: unset;
+}
+
+.navbar {
+  align-items: flex-end;
 }
 
 .product-quantity input {
@@ -11588,6 +11548,11 @@ textarea.form-control-lg {
   margin-top: auto;
   width: 100%;
   flex: 0 0 50px;
+}
+
+.font-nav {
+  font-size: 20px;
+  font-family: "Anek Devanagari", sans-serif;
 }
 
 /*# sourceMappingURL=custom-bootstrap.css.map */
