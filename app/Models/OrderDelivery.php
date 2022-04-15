@@ -31,7 +31,9 @@ class OrderDelivery extends Model
     {
         return $this->asArray()
             ->select('id')
+            ->limit(1)
             ->where(['user_id' => $uid])
+            ->orderBy('id',"DESC")
             ->find();
     }
 }
