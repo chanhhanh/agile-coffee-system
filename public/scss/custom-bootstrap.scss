@@ -122,7 +122,14 @@ $nav-tabs-link-active-color: $primary;
   right: 0;
   width: 300px;
   top: calc(100% + 5px);
+  
 }
+
+.cart-detail{
+  max-height: 200px;
+  overflow: auto;
+}
+
 .dropdown-toggle::after{
   all:unset;
 }
