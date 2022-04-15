@@ -5,7 +5,7 @@
       <hr>
 
       <form class="" action="<?php echo base_url('/login'); ?>" method="post">
-        <div class="row">
+        <div class="">
           <div class="form-group">
             <label for="email">Email : </label>
             <input type="text" class="form-control" name="email" id="email" placeholder="Enter your email..." value="">
@@ -23,3 +23,5 @@
         <button type="submit" class="btn btn-secondary col-12 mt-2">Signin</button>
       </form>
     </div>
+  </div>
+</div>
