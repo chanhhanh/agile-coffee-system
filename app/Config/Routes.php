@@ -44,6 +44,7 @@ $routes->get('/order/delete/(:num)', 'Cart::Delete/$1');
 
 $routes->get('(:any)', 'Pages::showme/$1');
 $routes->post('/add', 'Order::AddToCart');
+$routes->post('/confirm', 'Order::Confirm');
 $routes->match(['get', 'post'], '(:any)', 'Pages::showme/$1');
 
 

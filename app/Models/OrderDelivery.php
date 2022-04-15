@@ -27,4 +27,11 @@ class OrderDelivery extends Model
             ->select('order_delivery.id as order_id, order_item_delivery.id, order_delivery.total_amount as total_amount_order, status, ordered_at')
             ->findAll();
     }
+    public function getLastestOrderID($uid = null)
+    {
+        return $this->asArray()
+            ->select('id')
+            ->where(['user_id' => $uid])
+            ->find();
+    }
 }

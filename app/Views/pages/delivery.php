@@ -8,8 +8,8 @@
         </div>
     </div>
     <div class="form-input mt-5 px-5 container w-75">
-        <form action="">
-            <input type="text" class="form-control w-100 my-5" placeholder="Your Address Here" aria-label="Username" aria-describedby="addon-wrapping">
+        <form action=<?= base_url("/order_confirm") ?> method="post">
+            <input type="text" class="form-control w-100 my-5" placeholder="Your Address Here" aria-label="Username" aria-describedby="addon-wrapping" name="address">
             <div class="used-address">
                 Addresses you have used:
                 <?php foreach ($addresses as $address) : ?>
