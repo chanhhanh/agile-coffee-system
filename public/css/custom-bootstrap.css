@@ -11559,3 +11559,7 @@ textarea.form-control-lg {
 }
 
 /*# sourceMappingURL=custom-bootstrap.css.map */
+.cart-detail{
+  max-height: 300px;
+  overflow: auto;
+}
