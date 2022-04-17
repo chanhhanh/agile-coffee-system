@@ -129,4 +129,4 @@ nb-configuration.xml
 /node_modules
 
 # SQL
-*.sql
+#*.sql
