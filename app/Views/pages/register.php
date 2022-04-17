@@ -51,7 +51,7 @@
           <?php } ?>
         </div>
 
-        <button type="submit" class="btn btn-danger col-12 mt-2">Đăng ký</button>
+        <button type="submit" class="btn btn-secondary col-12 mt-2">Đăng ký</button>
       </form>
 
     </div>

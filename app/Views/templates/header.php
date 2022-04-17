@@ -25,7 +25,7 @@
             <li class="nav-item px-2 swapCart">
               <div class="">
                 <button type=" button" class="btn btn-light dropdown-toggle" onclick="toggle()">
-                  <i class="bi bi-cart"></i> <span class="badge badge-pill badge-danger" style="color: black">(0)</span>
+                  <i class="bi bi-cart"></i> <span class="badge badge-pill badge-danger" style="color: black"></span>
                 </button>
                 <div class="dropdown-menu p-4" id="popup">
                   <div class="row cart-detail">
