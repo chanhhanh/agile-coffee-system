@@ -15,4 +15,18 @@ class AddressModel extends Model
             ->where(['account' => $uid])
             ->findAll();
     }
+    public function getLastestUserAddress($uid = null, $address = null)
+    {
+        return $this->asArray()
+            ->select('address')
+            ->where(['account' => $uid, 'address'=>$address])
+            ->find();
+    }
+    public function getLastestAddressID($uid = null, $address = null)
+    {
+        return $this->asArray()
+            ->select('id')
+            ->where(['account' => $uid, 'address'=>$address])
+            ->find();
+    }
 }

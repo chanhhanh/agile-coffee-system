@@ -3,9 +3,9 @@
 <div class="main">
     <!-- carousel -->
     <div class="cart-ss1-right">
-    <div class="change-quantity decrease">-</div>
+        <!-- <div class="change-quantity decrease">-</div>
     <div class="amount">1</div>
-    <div class="change-quantity increase">+</div>
+    <div class="change-quantity increase">+</div> -->
     </div>
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -112,8 +112,8 @@
                             <p class="my-1"><?php echo $coffee["price_l"] ?></p>
                         </div>
                         <div class="col-sm">
-                            <a class="link-secondary text-decoration-none my-1 add" onclick="getCoffee(<?= $coffee['id'] ?>,'<?= $coffee['coffee_name'] ?>')" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <u class="my-1">Add</u>
+                            <a class="btn btn-secondary text-decoration-none my-1 add " onclick="getCoffee(<?= $coffee['id'] ?>,'<?= $coffee['coffee_name'] ?>')" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <u class="my-1 text-decoration-none">Add</u>
                             </a>
                         </div>
                     </div>
@@ -157,8 +157,8 @@
                             <p class="my-1"><?php echo $coffee["price_l"] ?></p>
                         </div>
                         <div class="col-sm">
-                            <a class="link-secondary text-decoration-none my-1 add" onclick="getCoffee(<?= $coffee['id'] ?>,'<?= $coffee['coffee_name'] ?>')" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <u class="my-1">Add</u>
+                            <a class="btn btn-secondary  text-decoration-none my-1 add" onclick="getCoffee(<?= $coffee['id'] ?>,'<?= $coffee['coffee_name'] ?>')" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <u class="my-1 text-decoration-none">Add</u>
                             </a>
                         </div>
                     </div>
@@ -182,7 +182,7 @@
                     </div>
                     <div class="col-sm">
                         <a class="link-secondary text-decoration-none my-1" href="<?php echo base_url() ?>">
-                            <a class="my-1 link-secondary" href="<?php echo base_url("/menu") ?>">Explore Full Menu</u>
+                            <a class="btn btn-secondary my-1 link-secondary" href="<?php echo base_url("/menu") ?>">Explore Full Menu -></u>
                             </a>
                     </div>
                 </div>
@@ -191,3 +191,5 @@
 
         <!-- Modal -->
         <?php include "modal.php" ?>
+    </div>
+</div>
