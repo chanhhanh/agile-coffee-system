@@ -156,9 +156,6 @@
                     </div>
                 </div>
         </div>
-        </form>
-
-        </div>
         <!-- End block content -->
     </main>
 
